@@ -42,6 +42,12 @@
  -->
 
 
+## myThink
+
+- php日志、PHP框架日志、MySQL日志、Nginx日志 日志配置及作用
+- octobercms参数验证写法、逻辑写法、数据模型
+- redis和session配置, 使用操作
+
 
 
 [参考资料1](https://www.zhihu.com/question/19786827)
