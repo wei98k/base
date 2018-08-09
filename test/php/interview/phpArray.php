@@ -272,11 +272,12 @@ var_dump(array_intersect_key($array1, $array2));
 */
 
 // array_intersect_uassoc 带索引计算数组的交集, 用回调函数比较索引##回调函数返回0为交集
+// 使用自定义函数接收的键值比较. 系统函数 strcasecmp 会比较键和值, 键不区分大小写, 值会区分大小.  该数组包含了所有在 array1 中也同时出现在所有其它参数数组中的值。注意和 array_intersect() 不同的是(array_intersect_uassoc)键名也用于比较
 /*
 $array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
-$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+$array2 = array("A" => "green", "c" => "brown", "yellow", "red");
 
-// print_r(array_intersect_uassoc($array1, $array2, "strcasecmp")); // "a" => "green" 为什么不输出?
+print_r(array_intersect_uassoc($array1, $array2, "strcasecmp")); // "a" => "green" 为什么不输出?
 
 
 function myfunction($a,$b)
@@ -292,7 +293,7 @@ function myfunction($a,$b)
 $a1=array("a"=>"red","b"=>"green","c"=>"blue");
 $a2=array("a"=>"red","b"=>"green","e"=>"blue");
 
-$result=array_intersect_uassoc($array1,$array2,"myfunction"); // "a" => "green" 和 "a" => "GREEN" 为什么没有比较? 这个不是应该输出是 "a" => "green" ? 
+// $result=array_intersect_uassoc($array1,$array2,"myfunction"); // "a" => "green" 和 "a" => "GREEN" 为什么没有比较? 这个不是应该输出是 "a" => "green" ? 
 print_r($result);
 
 // $a = 'a';
