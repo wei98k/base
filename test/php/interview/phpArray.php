@@ -1,7 +1,7 @@
 <?php
 
 // 代码测试环境 env/php/5.6  1天5个函数 
-// docker run -idt -v $PWD:/app mybasephp:5.6-fpm
+// docker run -idt -v $PWD:/app --name php-array mybasephp:5.6-fpm
 
 // array_change_key_case 将数组中的所有键名修改为全大写或小写, 默认将key转为消息, CASE_LOWER(小写) CASE_UPPER(大写)
 
@@ -253,9 +253,82 @@ print_r($flipped);
 
 # 2018年08月08日10:06:40 end
 
+# 2018年08月09日09:29:14 start 
+
+// array_intersect_assoc 带索引检查计算数组的差集##对比数组中有键和值都一样的元素
+/*
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "b" => "yellow", "blue", "red");
+$result_array = array_intersect_assoc($array1, $array2);
+print_r($result_array);
+*/
+
+// array_intersect_key 用键名比较计算数组的交集##返回键值一样的元素, 是array1中的. 
+/*
+$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
+
+var_dump(array_intersect_key($array1, $array2));
+*/
+
+// array_intersect_uassoc 带索引计算数组的交集, 用回调函数比较索引##回调函数返回0为交集
+/*
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+
+// print_r(array_intersect_uassoc($array1, $array2, "strcasecmp")); // "a" => "green" 为什么不输出?
 
 
+function myfunction($a,$b)
+{
+    echo $a .'#'. $b . "\n";
+    if ($a===$b)
+    {
+        return 0;
+    }
+    return ($a>$b)?1:-1;
+}
 
+$a1=array("a"=>"red","b"=>"green","c"=>"blue");
+$a2=array("a"=>"red","b"=>"green","e"=>"blue");
+
+$result=array_intersect_uassoc($array1,$array2,"myfunction"); // "a" => "green" 和 "a" => "GREEN" 为什么没有比较? 这个不是应该输出是 "a" => "green" ? 
+print_r($result);
+
+// $a = 'a';
+// $b = 'a';
+// $c = strcasecmp($a, $b);
+// var_dump($c);
+*/
+
+// array_intersect_ukey 用回调函数比较建名来计算数组的交集##回调函数返回0时认为元素交集
+/*
+function key_compare_func($key1, $key2)
+{
+    echo $key1 .'#'. $key2 . "\n";
+    if ($key1 == $key2)
+        return 0;
+    else if ($key1 > $key2)
+        return 1;
+    else
+        return -1;
+}
+
+$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
+
+var_dump(array_intersect_ukey($array1, $array2, 'key_compare_func'));
+*/
+
+// array_interscet 计算数组交集, 键名保留不变##以array1为主值其他数组出现array1的值则为交集元素
+/*
+$array1 = array("a" => "green", "red", "blue", 'ddd' => 1);
+$array2 = array("b" => "green", "yellow", "red", 1);
+$result = array_intersect($array1, $array2);
+print_r($result);
+*/
+
+// 2018年08月09日10:41:09 end
 
 
 
