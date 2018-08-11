@@ -331,6 +331,70 @@ print_r($result);
 
 // 2018年08月09日10:41:09 end
 
+// 2018年08月11日16:34:27 start
+
+// array_key_exists 指定的数组是否有指定的键名或索引##只能是一维数组
+// 多维数组的key如何检测?
+/*
+$search_array = array('firsta' => null, 'second' => 4);
+// if (array_key_exists('first', $search_array)) {
+//     echo "The 'first' element is in the array\n";
+// }
+
+$a = checkKey('first', $search_array);
+var_dump($a);
+
+function checkKey($key, $arr) {
+    return (isset($arr [$key]) || array_key_exists($key, $arr));
+    // 速度比直接使用array_key_exists要快 http://php.net/manual/zh/function.array-key-exists.php#107786
+}
+*/
+
+// array_key_first
+// array_key_last php7新加函数
+
+
+// array_keys 返回数组中部分或全部的键名
+/*
+// $array = array(0 => 100, "color" => "red");
+// print_r(array_keys($array));
+
+// $array = array("blue", "red", "green", "blue", "blue");
+// print_r(array_keys($array, "blue")); // 利用这个函数检测数组中的值是否存在
+
+
+$array = array("color" => array( 'a' => "blue", "red", "green"),
+               "size"  => array("small", "medium", "large"));
+print_r(array_keys($array));
+*/
+
+// array_map 为数组的每个元素应用回调函数 TODO::有哪些好玩的用法
+/*
+function cube($n)
+{
+    return($n * $n * $n);
+}
+
+$a = array(1, 2, 3, 4, 5);
+$b = array_map("cube", $a);
+print_r($b);
+*/
+
+// array_merge_reursive 递归合并一个或多个数组#相同的键会覆盖但值不会
+/*
+$ar1 = array("color" => array("favorite" => "red"), 5);
+$ar2 = array(10, "color" => array("favorite" => "green", "blue"));
+$result = array_merge_recursive($ar1, $ar2);
+print_r($result);
+*/
+
+// array_merge 合并一个或多个数组
+/*
+$array1 = array("color" => "red", 2, 4, array('d' => 111));
+$array2 = array("a", "b", "color" => "green", "shape" => "trapezoid", 4);
+$result = array_merge($array1, $array2);
+print_r($result);
+*/
 
 
 
