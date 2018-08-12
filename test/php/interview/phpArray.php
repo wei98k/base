@@ -396,6 +396,81 @@ $result = array_merge($array1, $array2);
 print_r($result);
 */
 
+//date:2018年08月11日17:34:27 end
 
 
+//date:2018年08月12日13:55:59 start
+/*
+// array_multisort 对多个数组或多维数组进行排序
 
+// $ar1 = array(10, 100, 100, 0);
+// $ar2 = array(5, 3, 2, 4);
+// array_multisort($ar1, $ar2); //第二个数组排序位置对应第一组数组排序后的位置
+
+// var_dump($ar1);
+// var_dump($ar2);
+
+
+// $ar = array(
+//        array("10", 11, 100, 100, "a"),
+//        array(   1,  2, "2",   3,   1)
+//       );
+// array_multisort($ar[0], SORT_ASC, SORT_STRING,
+//                 $ar[1], SORT_NUMERIC, SORT_DESC);
+// var_dump($ar);
+
+$data[] = array('volume' => 67, 'edition' => 2);
+$data[] = array('volume' => 86, 'edition' => 1);
+$data[] = array('volume' => 85, 'edition' => 6);
+$data[] = array('volume' => 98, 'edition' => 2);
+$data[] = array('volume' => 86, 'edition' => 6);
+$data[] = array('volume' => 67, 'edition' => 7);
+
+// 取得列的列表
+foreach ($data as $key => $row) {
+    $volume[$key]  = $row['volume'];
+    $edition[$key] = $row['edition'];
+}
+
+// 将数据根据 volume 降序排列，根据 edition 升序排列
+// 把 $data 作为最后一个参数，以通用键排序
+array_multisort($volume, SORT_DESC, $edition, SORT_ASC, $data);
+
+var_dump($data);
+*/
+
+// array_pad 以指定长度将一个值填充进数组##从1开始
+/*
+$input = array(12, 10, 9);
+
+$result = array_pad($input, 5, 0);
+var_dump($result);
+// result is array(12, 10, 9, 0, 0)
+
+$result = array_pad($input, -7, -1);
+// result is array(-1, -1, -1, -1, 12, 10, 9)
+
+$result = array_pad($input, 2, "noop");
+*/
+
+// array_pop 弹出数组最后一个单元, 弹出并返回 array 数组的最后一个单元，并将数组 array 的长度减一
+/*
+$stack = array("orange", "banana", "apple", "raspberry");
+$fruit = array_pop($stack);
+print_r($stack);
+*/
+// array_product 计算数组中所有值的积, 空数组现在会产生 1，而之前此函数处理空数组会产生 0。
+/*
+$a = array(2, 4, 6, 8);
+echo "product(a) = " . array_product($a) . "\n";
+echo "product(array()) = " . array_product(array()) . "\n";
+*/
+
+// array_push 将一个或多个单元压入数组
+/*
+$stack = array("orange", "banana");
+array_push($stack, "apple", "raspberry");
+print_r($stack);
+*/
+
+//date:2018年08月12日14:39:08 end
