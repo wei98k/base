@@ -474,3 +474,69 @@ print_r($stack);
 */
 
 //date:2018年08月12日14:39:08 end
+
+
+//date:2018年08月13日14:51:32 start
+
+// array_rand() 从数组中随机取出一个或多个单元# 键值不返回
+/*
+$input = array("Neo", 'a' => "Morpheus", "Trinity", "Cypher", "Tank");
+$rand_keys = array_rand($input, 3);
+echo $input[$rand_keys[0]] . "\n";
+echo $input[$rand_keys[1]] . "\n";
+*/
+
+//TODO::array_reduce() 用回调函数迭代地将数组简化为单一的值#应该还有其他玩法
+/*
+function sum($carry, $item)
+{
+    $carry += $item;
+    return $carry;
+}
+
+function product($carry, $item)
+{
+    $carry *= $item;
+    return $carry;
+}
+
+$a = array(1, 2, 3, 4, 5);
+$x = array();
+
+var_dump(array_reduce($a, "sum")); // int(15)
+var_dump(array_reduce($a, "product", 10)); // int(1200), because: 10*1*2*3*4*5
+var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data to reduce"
+*/
+
+//TODO::array_replace_recursive() 使用传递的数组递归替换第一个数组的元素
+/*
+$base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
+$replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
+
+$basket = array_replace_recursive($base, $replacements);
+print_r($basket);
+
+$basket = array_replace($base, $replacements);
+print_r($basket);
+*/
+
+// array_replace() 使用传递的数组替换第一个数组的元素
+/*
+$base = array("orange", "banana", "apple", "raspberry");
+$replacements = array(0 => "pineapple", 4 => "cherry");
+$replacements2 = array(0 => "grape");
+
+$basket = array_replace($base, $replacements, $replacements2);
+print_r($basket);
+*/
+
+// array_reverse() 返回单元顺序的数组
+/*
+$input  = array("php", 4.0, array("green", "red"));
+$reversed = array_reverse($input);
+$preserved = array_reverse($input, true);
+
+print_r($input);
+print_r($reversed);
+print_r($preserved);
+*/
