@@ -3,6 +3,13 @@
 // 代码测试环境 env/php/5.6  1天5个函数 
 // docker run -idt -v $PWD:/app --name php-array mybasephp:5.6-fpm
 
+/*
+    第一遍: 熟悉数组函数
+    第二遍: 分类比较相同函数
+    第三遍: 测试TODO函数
+
+*/
+
 // array_change_key_case 将数组中的所有键名修改为全大写或小写, 默认将key转为消息, CASE_LOWER(小写) CASE_UPPER(大写)
 
 /*
@@ -614,3 +621,114 @@ echo "sum(b) = " . array_sum($b) . "\n";
 */
 
 //date:2018年08月14日11:37:50 end
+
+//date:2018年08月15日11:24:43 start
+
+
+//TODO:array_udiff_assoc 带索引计算数组的差值, 用回调函数比较数据  
+//怎么可以知道项目中使用了哪些系统函数? eg: laravel 使用了哪些系统函数.  想知道项目使用系统函数的数量及函数的使用场景. 
+/*
+class cr {
+    private $priv_member;
+    function cr($val)
+    {
+        $this->priv_member = $val;
+    }
+
+    static function comp_func_cr($a, $b)
+    {
+        if ($a->priv_member === $b->priv_member) return 0;
+        return ($a->priv_member > $b->priv_member)? 1:-1;
+    }
+}
+
+$a = array("0.1" => new cr(9), "0.5" => new cr(12), 0 => new cr(23), 1=> new cr(4), 2 => new cr(-15),);
+$b = array("0.2" => new cr(9), "0.5" => new cr(22), 0 => new cr(3), 1=> new cr(4), 2 => new cr(-15),);
+
+$result = array_udiff_assoc($a, $b, array("cr", "comp_func_cr"));
+print_r($result);
+*/
+
+//TODO:array_udiff_uassoc 带索引检查数组的差集, 用回调函数比较数据和索引
+/*
+class cr {
+    private $priv_member;
+    function cr($val)
+    {
+        $this->priv_member = $val;
+    }
+
+    static function comp_func_cr($a, $b)
+    {
+        if ($a->priv_member === $b->priv_member) return 0;
+        return ($a->priv_member > $b->priv_member)? 1:-1;
+    }
+
+    static function comp_func_key($a, $b)
+    {
+        if ($a === $b) return 0;
+        return ($a > $b)? 1:-1;
+    }
+}
+$a = array("0.1" => new cr(9), "0.5" => new cr(12), 0 => new cr(23), 1=> new cr(4), 2 => new cr(-15),);
+$b = array("0.2" => new cr(9), "0.5" => new cr(22), 0 => new cr(3), 1=> new cr(4), 2 => new cr(-15),);
+
+$result = array_udiff_uassoc($a, $b, array("cr", "comp_func_cr"), array("cr", "comp_func_key"));
+print_r($result);
+*/
+
+// array_udiff 用回调函数比较数据来计算数组的差集
+/*
+// Arrays to compare
+$array1 = array(new stdclass, new stdclass,
+                new stdclass, new stdclass,
+               );
+
+$array2 = array(
+                new stdclass, new stdclass,
+               );
+
+// Set some properties for each object
+$array1[0]->width = 11; $array1[0]->height = 3;
+$array1[1]->width = 7;  $array1[1]->height = 1;
+$array1[2]->width = 2;  $array1[2]->height = 9;
+$array1[3]->width = 5;  $array1[3]->height = 7;
+
+$array2[0]->width = 7;  $array2[0]->height = 5;
+$array2[1]->width = 9;  $array2[1]->height = 2;
+
+function compare_by_area($a, $b) {
+    $areaA = $a->width * $a->height;
+    $areaB = $b->width * $b->height;
+    
+    if ($areaA < $areaB) {
+        return -1;
+    } elseif ($areaA > $areaB) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+print_r(array_udiff($array1, $array2, 'compare_by_area'));
+*/
+
+// array_uintersect_assoc  带索引检查数组的交集, 用回调函数比较数据#键值比较区别大小写
+/*
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+
+print_r(array_uintersect_assoc($array1, $array2, "strcasecmp"));
+*/
+
+// array_uinntersect_uassoc 带索引检查计算数组的交集, 用单独的回调函数比较数据和索引
+/*
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+
+print_r(array_uintersect_uassoc($array1, $array2, "strcasecmp", "strcasecmp"));
+*/
+
+// data:2018年08月15日11:46:47 end
+
+
