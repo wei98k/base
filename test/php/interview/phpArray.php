@@ -729,6 +729,33 @@ $array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
 print_r(array_uintersect_uassoc($array1, $array2, "strcasecmp", "strcasecmp"));
 */
 
-// data:2018年08月15日11:46:47 end
+// date:2018年08月15日11:46:47 end
 
+
+// date:2018年08月21日11:03:05 start
+
+// array_uintersect 计算数组的交集, 用回调函数比较数据 比较元素中的值.
+/*
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "GREEN", "B" => "brown", "yellow", "red");
+
+print_r(array_uintersect($array1, $array2, "strcasecmp"));
+*/
+
+// array_unique 移除数组中重复的值
+/*
+$input = array("a" => "green", "red", "b" => "green", "blue", "red");
+$result = array_unique($input);
+print_r($result);
+*/
+
+// array_unshift 在数组开头插入一个或多个单元
+
+
+// array_values
+
+
+// array_walk_recursive 
+
+// date:   end 
 
