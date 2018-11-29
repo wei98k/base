@@ -23,6 +23,12 @@
 			}
 		})
 
+		// 两秒后改变页面的文字, vue是操作数据 不用管DOM
+
+		setTimeout(function() {
+			app.$data.content = 'bye world'
+		}, 2000)
+
 	</script>
 
 </body>
