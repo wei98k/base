@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>templateGrammar01</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<!-- <div v-bind:id="dynamicId"></div> -->
+
+		<p v-if="seen">现在你看到我了</p>
+
+		<button v-bind:disabled="isButtonDisabled">Button</button>
+
+		<a v-bind:href="url">啦啦啦</a>
+
+		<a @click="dosomething">别碰我！！</a>
+	</div>
+	
+
+	<script type="text/javascript">
+
+		var vm = new Vue({
+			el: '#app',
+			data: {
+			  	seen: true,
+			  	isButtonDisabled: true,
+			  	url: 'http://www.majianwei.com'
+			},
+			methods: {
+				dosomething: function() {
+					alert('你碰了我 你要负责！！');
+					console.log('你碰了我 你要负责！！');
+				}
+			}
+		});
+
+		console.log(vm.seen);
+
+		// : 与 @ 对于特性名来说都是合法字符，在所有支持 Vue.js 的浏览器都能被正确地解析
+
+	</script>
+
+</body>
+</html>

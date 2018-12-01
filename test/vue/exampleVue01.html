@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>org-vue-example</title>
+	<script src="./vue.js"></script>
+
+</head>
+<body>
+
+	<!-- Object.freeze() -->
+
+	<div id="app">
+	  <p>{{ foo }}</p>
+	  <!-- 这里的 `foo` 不会更新！ -->
+	  <button v-on:click="foo = 'baz'">Change it</button>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+		// ## 数据与方法
+
+		var data = { a: 1 }
+
+		console.log(data);
+
+		var vm = new Vue({
+		  data: data
+		});
+
+		console.log(vm);
+		console.log(vm.a);
+
+		vm.a == data.a
+
+		console.log(vm.a);
+
+		data.a = 3  // 双向绑定 
+		vm.a // => 3
+
+		console.log(vm.a);
+
+		// 视图会进行重渲染。值得注意的是只有当实例被创建时 data 中存在的属性才是响应式的
+
+		vm.b = 'hi'
+
+		// 那么对 b 的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值
+
+		// 当某些值 不想要被改变的时候 那么就用 Object.freeze()
+
+		var obj = {
+		  foo: 'bar'
+		}
+
+		Object.freeze(obj) // 设置后悔有报错信息
+
+		new Vue({
+		  el: '#app',
+		  data: obj
+		});
+
+		// ## 实例生命周期钩子
+
+		// 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等  叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会
+
+		
+
+
+	</script>
+</body>
+</html>
