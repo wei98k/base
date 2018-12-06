@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>vue0306 Vue中的样式绑定</title>
+	<script src="./vue.js"></script>
+	<style type="text/css">
+		.activated {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div @click="handleDivClick"
+			 :class="{activated: isActivated}"
+		>
+			hello World 
+
+		</div>
+	</div>
+<!-- 
+row 类似 tr select ul li  这种可以使用is来完成组件渲染
+ -->
+<script type="text/javascript">
+
+	var vm = new Vue({
+		el: '#root',
+		data: {
+			isActivated: false
+		},
+		methods: {
+			handleDivClick: function() {
+				this.isActivated = !this.isActivated;
+			}
+		}
+	})
+
+</script>
+
+</body>
+</html>
