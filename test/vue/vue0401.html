@@ -7,8 +7,9 @@
 </head>
 <body>
 	<div id="root">
-		<counter></counter>
-		<counter></counter>
+		<counter ref="one" @change="handleChange"></counter>
+		<counter ref="tow" @change="handleChange"></counter>
+		<div>{{total}}</div>
 	</div>
 <!-- 
 row 类似 tr select ul li  这种可以使用is来完成组件渲染
@@ -25,12 +26,24 @@ row 类似 tr select ul li  这种可以使用is来完成组件渲染
 		methods: {
 			handleClick: function() {
 				this.number ++
+				this.$emit('change')
 			}
 		}
 	})
 
 	var vm = new Vue({
-		el: '#root'
+		el: '#root',
+		data: {
+			total: 0
+		},
+		methods: {
+			handleChange: function() {
+				console.log(this.$refs.one.number)
+				console.log(this.$refs.tow.number)
+
+				this.total = this.$refs.one.number + this.$refs.tow.number
+			}
+		}
 	})
 
 </script>
