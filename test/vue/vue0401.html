@@ -7,22 +7,26 @@
 </head>
 <body>
 	<div id="root">
-		<table>
-			<tbody>
-				<tr is="row"></tr>
-			</tbody>
-		</table>
+		<div
+			ref='hello'
+			@click="handleClick"
+		>
+			hello world
+		</div>
 	</div>
 <!-- 
 row 类似 tr select ul li  这种可以使用is来完成组件渲染
  -->
 <script type="text/javascript">
-	Vue.component('row', {
-		template: '<tr><td>this is a row </td></tr>'
-	})
+
 
 	var vm = new Vue({
-		el: '#root'
+		el: '#root',
+		methods: {
+			handleClick: function() {
+				console.log(this.$refs.hello)
+			}
+		}
 	})
 
 </script>
