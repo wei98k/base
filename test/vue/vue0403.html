@@ -8,7 +8,7 @@
 <body>
 	<div id="root">
 		<!-- :content="111"  如果是数字需要加冒号-->
-		<child content="111"></child>
+		<child content="lalalalla"></child>
 	</div>
 <!-- 
  -->
@@ -21,9 +21,9 @@
 			// content: String
 			content: {
 				type: String,
-				required: false,
-				// content="111" 如果没有这行的话就显示default的内容
-				default: 'default value'
+				validator: function(value) {
+					return (value.length > 5)
+				}
 			}
 		},
 		template: '<div>{{content}}</div>'
