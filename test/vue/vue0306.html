@@ -31,11 +31,14 @@ row 类似 tr select ul li  这种可以使用is来完成组件渲染
 		},
 		methods: {
 			handleDivClick: function() {
-				if(this.activated === "activated") {
-					this.activated = '';
-				} else {
-					this.activated = 'activated';
-				}
+				// if(this.activated === "activated") {
+				// 	this.activated = '';
+				// } else {
+				// 	this.activated = 'activated';
+				// }
+
+				this.activated = this.activated === "activated" ? "" : "activated"
+
 				
 			}
 		}
