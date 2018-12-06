@@ -7,8 +7,9 @@
 </head>
 <body>
 	<div id="root">
-		<child-one v-if="type ==='child-one' "></child-one>
-		<child-two v-if="type ==='child-two' "></child-two>
+		<!-- <child-one v-if="type ==='child-one' "></child-one>
+		<child-two v-if="type ==='child-two' "></child-two> -->
+		<component :is="type"></component>
 		<button @click="handleBtnClick" >change</button>
 	</div>
 <!-- 
