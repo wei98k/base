@@ -8,7 +8,8 @@
 <body>
 	<div id="root">
 		<child>
-			<h3>this is chachao</h3>
+			<div class="header" slot="header">header</div>
+			<div class="header" slot="footer">footer</div>
 		</child>
 	</div>
 <!-- 
@@ -17,7 +18,7 @@
 
 	Vue.component('child', {
 		props: ['content'],
-		template: '<div><p>hello</p><slot>this is default</slot></div>'
+		template: '<div> <slot name="header"></slot> <div class="content">this is content</div> <slot name="footer"></slot> </div>'
 	})
 
 	var vm = new Vue({
