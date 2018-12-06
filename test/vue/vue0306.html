@@ -13,7 +13,7 @@
 <body>
 	<div id="root">
 		<div @click="handleDivClick"
-			 :class="{activated: isActivated}"
+			 :class="[activated]"
 		>
 			hello World 
 
@@ -27,11 +27,16 @@ row 类似 tr select ul li  这种可以使用is来完成组件渲染
 	var vm = new Vue({
 		el: '#root',
 		data: {
-			isActivated: false
+			activated: ""
 		},
 		methods: {
 			handleDivClick: function() {
-				this.isActivated = !this.isActivated;
+				if(this.activated === "activated") {
+					this.activated = '';
+				} else {
+					this.activated = 'activated';
+				}
+				
 			}
 		}
 	})
