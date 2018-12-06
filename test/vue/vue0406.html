@@ -7,7 +7,9 @@
 </head>
 <body>
 	<div id="root">
-		<child content='<h2>Dell</h2>'></child>
+		<child>
+			<h3>this is chachao</h3>
+		</child>
 	</div>
 <!-- 
  -->
@@ -15,7 +17,7 @@
 
 	Vue.component('child', {
 		props: ['content'],
-		template: '<div><p>hello</p><div v-html="this.content"></div></div>'
+		template: '<div><p>hello</p><slot>this is default</slot></div>'
 	})
 
 	var vm = new Vue({
