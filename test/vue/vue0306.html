@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="root">
-		<div :style="styleObj"
+		<div :style="[styleObj, {fontSize: '28px'}]"
 			  @click="handleDivClick"
 		>
 			hello World 
