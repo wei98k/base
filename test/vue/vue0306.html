@@ -12,35 +12,26 @@
 </head>
 <body>
 	<div id="root">
-		<div @click="handleDivClick"
-			 :class="[activated]"
+		<div :style="styleObj"
 		>
 			hello World 
 
 		</div>
 	</div>
 <!-- 
-row 类似 tr select ul li  这种可以使用is来完成组件渲染
+对象或数组方式
  -->
 <script type="text/javascript">
 
 	var vm = new Vue({
 		el: '#root',
 		data: {
-			activated: ""
+			styleObj: {
+				color: "red"
+			}
 		},
 		methods: {
-			handleDivClick: function() {
-				// if(this.activated === "activated") {
-				// 	this.activated = '';
-				// } else {
-				// 	this.activated = 'activated';
-				// }
-
-				this.activated = this.activated === "activated" ? "" : "activated"
-
-				
-			}
+			
 		}
 	})
 
