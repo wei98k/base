@@ -7,26 +7,30 @@
 </head>
 <body>
 	<div id="root">
-		<div
-			ref='hello'
-			@click="handleClick"
-		>
-			hello world
-		</div>
+		<counter></counter>
+		<counter></counter>
 	</div>
 <!-- 
 row 类似 tr select ul li  这种可以使用is来完成组件渲染
  -->
 <script type="text/javascript">
 
-
-	var vm = new Vue({
-		el: '#root',
+	Vue.component('counter', {
+		template: '<div @click="handleClick">{{number}}</div>',
+		data: function() {
+			return {
+				number: 0
+			}
+		},
 		methods: {
 			handleClick: function() {
-				console.log(this.$refs.hello.innerHTML)
+				this.number ++
 			}
 		}
+	})
+
+	var vm = new Vue({
+		el: '#root'
 	})
 
 </script>
