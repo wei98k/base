@@ -7,9 +7,9 @@
 </head>
 <body>
 	<div id="root">
-		<counter :count="1"></counter>
-		<counter :count="3"></counter>
-
+		<counter :count="1" @inc="handleIncrease"></counter>
+		<counter :count="3" @inc="handleIncrease"></counter>
+		<div> {{total}} </div>
 	</div>
 <!--
 	父组件可以随意修改子组件参数
@@ -27,15 +27,25 @@
 		template: '<div @click="handleClick">{{number}}</div>',
 		methods: {
 			handleClick: function() {
-				this.number ++
+				this.number = this.number + 2
+				this.$emit('inc', 2)
 			}
 		}
 	}
 
 	var vm = new Vue({
 		el: '#root',
+		data: {
+			total: 4
+		},
 		components: {
 			counter: counter
+		},
+		methods: {
+			handleIncrease: function(step) {
+				// alert(step)
+				this.total += step
+			}
 		}
 	})
 
