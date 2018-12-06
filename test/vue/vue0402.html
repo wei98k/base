@@ -11,13 +11,25 @@
 		<counter :count="3"></counter>
 
 	</div>
-<!-- 
+<!--
+	父组件可以随意修改子组件参数
+	子组件不可修改父组件参数
  -->
 <script type="text/javascript">
 
 	var counter = {
 		props: ['count'],
-		template: '<div>{{count}}</div>'
+		data: function() {
+			return {
+				number: this.count
+			}
+		},
+		template: '<div @click="handleClick">{{number}}</div>',
+		methods: {
+			handleClick: function() {
+				this.number ++
+			}
+		}
 	}
 
 	var vm = new Vue({
