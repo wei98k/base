@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>vue 父子组件传值</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<counter :count="1"></counter>
+		<counter :count="3"></counter>
+
+	</div>
+<!-- 
+ -->
+<script type="text/javascript">
+
+	var counter = {
+		props: ['count'],
+		template: '<div>{{count}}</div>'
+	}
+
+	var vm = new Vue({
+		el: '#root',
+		components: {
+			counter: counter
+		}
+	})
+
+</script>
+
+</body>
+</html>
