@@ -1,0 +1,3 @@
+Q: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)  
+
+A: chmod -R 777 ./app/data/mysql

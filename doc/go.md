@@ -6,6 +6,7 @@
 
 [视频-入门视频教程](https://www.imooc.com/learn/968)
 [视频-Golang爬虫上手指南完整版](https://www.bilibili.com/video/av31551627/)
+[文章-GO入门指南](https://go.fdos.me)
 [文章-mac上安装go环境](https://blog.csdn.net/xiaoquantouer/article/details/79985650)
 
 ## 安装
