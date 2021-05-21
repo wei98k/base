@@ -1,0 +1,26 @@
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    
+    var a = []int{1, 2, 3, 4, 5}
+    var r [5]int
+    
+    for i,v := range a{
+        if i == 0 {
+            a[1] = 12
+            a[2] = 13
+        }
+        r[i] = v
+    }
+    
+    fmt.Println("r = ", r)
+    fmt.Println("a = ", a)
+
+   
+   // r = 1 12 13 4 5
+   // a = 1 12 13 4 5
+}
