@@ -3,6 +3,7 @@ package main
 import (
 	"example/util"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -37,4 +38,38 @@ func main() {
 
 	println("getCurrentAbPath: ", util.GetCurrentAbPath())
 
+	//===== 改变当前目录
+	// os.Chdir("../")
+
+	// pwd1, err := os.Getwd()
+
+	// println("方式2 Getwd: ", pwd1, err)
+
+	//===== 设置文件权限
+
+	err2 := os.Chmod("./tmp/a.txt", 0644)
+
+	fmt.Println(err2)
+
+	MyCreateTemp()
+}
+
+func MyCreateTemp() {
+
+	// 创建一个临时文件
+	f, err := os.CreateTemp("", "example")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// 程序执行完 删除文件
+	defer os.Remove(f.Name())
+	// 写入临时文件
+	if _, err := f.Write([]byte("content")); err != nil {
+		log.Fatal(err)
+	}
+	// 关闭临时文件
+	if err := f.Close(); err != nil {
+		log.Fatal(err)
+	}
+	println("run MyCreateTemp")
 }
