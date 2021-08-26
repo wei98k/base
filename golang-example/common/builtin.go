@@ -11,7 +11,6 @@ const (
 func constantDome() {
 	fmt.Println(true)
 }
-
 // 常用内置函数
 
 func appendDome()  {
