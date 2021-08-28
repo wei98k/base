@@ -38,3 +38,21 @@ func GetCurrentAbPathByCaller() string {
 	}
 	return abPath
 }
+
+// 获得项目根目录-获取运行时路径 go run 这样运行获取的是一个临时目录
+func GetProjectRoot() string {
+	binDir, err := executableDir()
+	if err != nil {
+		return ""
+	}
+	return path.Dir(binDir)
+}
+
+// 获得可执行程序所在目录
+func executableDir() (string, error) {
+	pathAbs, err := filepath.Abs(os.Args[0])
+	if err != nil {
+		return "", err
+	}
+	return filepath.Dir(pathAbs), nil
+}
