@@ -8,8 +8,13 @@ import (
 
 // 交替打印数字和字母
 func CrossPrintNumberAndLetter() {
+
+	// 定义两个通道
 	letter, number := make(chan bool), make(chan bool)
+
+	// 定义阻塞组
 	wait := sync.WaitGroup{}
+
 	go func() {
 		i := 1
 		for {
@@ -19,6 +24,7 @@ func CrossPrintNumberAndLetter() {
 				i++
 				fmt.Print(i)
 				i++
+				// 通知字母协程运行
 				letter <- true
 				break
 			default:
@@ -26,6 +32,7 @@ func CrossPrintNumberAndLetter() {
 			}
 		}
 	}()
+	// 协程计数器
 	wait.Add(1)
 	go func(wait *sync.WaitGroup) {
 		str := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -33,6 +40,7 @@ func CrossPrintNumberAndLetter() {
 		for {
 			select {
 			case <-letter:
+				// 当i的值大于或等于字符的长度时 停止全部协程运行
 				if i >= strings.Count(str, "")-1 {
 					wait.Done()
 					return
@@ -51,7 +59,10 @@ func CrossPrintNumberAndLetter() {
 			}
 		}
 	}(&wait)
+
+	// 通过这个number通道告诉 number协程可以运行了
 	number <- true
 
+	// 挂载全部协程，等待全部程序结束。
 	wait.Wait()
 }
