@@ -28,21 +28,6 @@ func main() {
 	// 	}(i)
 	// }
 	// wg.Wait()
-
-	myMap := new(Map)
-
-	myMap.Out("keya", "ok123")
-}
-
-type Map struct {
-	c   map[string]*entry
-	rmx *sync.RWMutex
-}
-
-type entry struct {
-	ch      chan struct{}
-	value   interface{}
-	isExist bool
 }
 
 func RandNumber() {
@@ -63,30 +48,4 @@ func RandNumber() {
 		}
 	}()
 	wg.Wait()
-}
-
-func (m *Map) Out(key string, val interface{}) {
-	m.rmx.Lock()
-	defer m.rmx.Unlock()
-
-	//if m.c == nil {
-	//	m.c = make(map[string]*entry)
-	//}
-
-	item, ok := m.c[key]
-	if !ok {
-		m.c[key] = &entry{
-			value:   val,
-			isExist: true,
-		}
-		return
-	}
-	item.value = val
-	if !item.isExist {
-		if item.ch != nil {
-			close(item.ch)
-			item.ch = nil
-		}
-	}
-	return
 }
