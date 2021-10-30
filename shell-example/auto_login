@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+set USER root
+set PASSWORD root123
+set HOST 192.168.2.27
+spawn ssh -l $USER $HOST
+expect {
+   "yes/no" {send "yes\r";exp_continue;}
+   "*assword:*" { send "$PASSWORD\r" }
+}
+# 登录成功后，可以执行别的命令，如
+#expect "~]*" {send "ssh xxxx\r"}
+expect {
+   "yes/no" {send "yes\r";exp_continue;}
+   "\\\$"
+}
