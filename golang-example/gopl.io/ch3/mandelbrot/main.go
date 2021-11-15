@@ -51,7 +51,12 @@ func acos(z complex128) color.Color {
 	// 原文: The real built-in function returns the real part of the complex number c. The return value will be floating point type corresponding to the type of c.
 	// 译文: 实数内置函数返回复数c的实数部分，返回值将是与c的类型相对应的浮点类型。
 	blue := uint8(real(v)*128) + 127
+	// 原文: The imag built-in function returns the imaginary part of the complex number c. The return value will be floating point type corresponding to the type of c.
+	// 译文: imag内置函数返回复数c的虚部，返回值将是与c的类型相对应的浮点类型。
 	red := uint8(imag(v)*128) + 127
+	// 原文: YCbCr represents a fully opaque 24-bit Y'CbCr color, having 8 bits each for one luma and two chroma components.
+	// 译文: YCbCr表示完全不透明的24位Y'CbCr颜色，一个卢马和两个色度成分各占8位。
+	// Tip: RGB和Y'CbCr之间的转换是有损失的
 	return color.YCbCr{192, blue, red}
 }
 
