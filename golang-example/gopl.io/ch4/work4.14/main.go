@@ -2,7 +2,6 @@ package main
 
 import (
 	"example/gopl.io/ch4/work4.14/issue"
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -21,9 +20,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	q := r.FormValue("key")
-	fmt.Println(q)
+	// fmt.Println(q)
 	result, err := issue.SearchIssues(q)
-	fmt.Println(result)
+	// fmt.Println(result)
 	if err != nil {
 		log.Println(err)
 	}
