@@ -86,6 +86,7 @@ type custom struct {
 }
 
 // 实现sort接口
+// ? 为什么要去实现接口, 自己写不也可以吗
 func (x custom) Len() int           { return len(x.t) }
 func (x custom) Less(i, j int) bool { return x.less(x.t[i], x.t[j]) }
 func (x custom) Swap(i, j int)      { x.swap(x.t[i], x.t[j]) }

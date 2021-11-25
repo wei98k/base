@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	//创建一个web服务
 	http.HandleFunc("/", index)
 	log.Fatal(http.ListenAndServe(":8888", nil))
 }

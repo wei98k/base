@@ -21,7 +21,9 @@ func main() {
 }
 
 func WaitForServer(url string) error {
+	// 定义超时时间间隔为1分钟
 	const timeout = 1 * time.Minute
+	// 现在的时间+上1分钟 如何这个时候还有响应结果 表示超时了
 	deadline := time.Now().Add(timeout)
 	for tries := 0; time.Now().Before(deadline); tries++ {
 		_, err := http.Head(url)
