@@ -1,12 +1,11 @@
-// Package word provides utilities for word games.
 package word
 
-import (
-	"unicode"
-)
+import "unicode"
 
-// IsPalindrome reports whether s reads the same forward and backward.
-// Letter case is ignored, as are non-letters.
+// 练习 11.3: TestRandomPalindromes测试函数
+// 只测试了回文字符串。编写新的随机测试生成器，
+// 用于测试随机生成的非回文字符串。
+
 func IsPalindrome(s string) bool {
 	var letters []rune
 	for _, r := range s {
