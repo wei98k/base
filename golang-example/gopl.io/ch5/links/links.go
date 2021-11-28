@@ -28,7 +28,7 @@ func Extract(url string) ([]string, error) {
 				if a.Key != "href" {
 					continue
 				}
-				link, err := resp.Request.URL.Parse(a.Key)
+				link, err := resp.Request.URL.Parse(a.Val)
 				if err != nil {
 					continue
 				}
