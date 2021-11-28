@@ -5,6 +5,9 @@ import (
 	"time"
 )
 
+// 基于Select多路复用
+//
+
 func main() {
 	fmt.Println("commencing countdown.")
 	tick := time.Tick(1 * time.Second)
