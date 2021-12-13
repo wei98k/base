@@ -1,0 +1,21 @@
+# Choose storage path on your machine. For all storage systems
+DATA_PATH_HOST=~/.myserver/data
+
+### MYSQL-5.7 #################################################
+
+MYSQL_VERSION=5.7
+MYSQL_DATABASE=default
+MYSQL_USER=default
+MYSQL_PASSWORD=default
+MYSQL_PORT=6601
+MYSQL_ROOT_PASSWORD=root123
+MYSQL_ENTRYPOINT_INITDB=./mysql5.7/docker-entrypoint-initdb.d
+
+
+### Drivers ################################################
+
+# All volumes driver
+VOLUMES_DRIVER=local
+
+# All Networks driver
+NETWORKS_DRIVER=bridge

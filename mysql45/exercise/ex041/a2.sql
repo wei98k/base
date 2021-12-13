@@ -1,0 +1,1 @@
+mysqldump -uroot -proot123 --add-locks --no-create-info --single-transaction --set-gtid-purged=OFF db1 t --where="a>900" --result-file=/home/tmp/t.sql
