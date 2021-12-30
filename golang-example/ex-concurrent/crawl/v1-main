@@ -1,0 +1,213 @@
+package main
+
+import (
+	"bytes"
+	"fmt"
+	"io"
+	"io/fs"
+	"log"
+	"net/http"
+	"os"
+
+	"golang.org/x/net/html"
+)
+
+// 抓取gitbook网页
+func main() {
+
+	//读取网页
+	resp, err := http.Get("https://books.studygolang.com/gopl-zh/")
+
+	baseDir := "books.studygolang.com"
+
+	// 创建抓取地址目录
+	os.Mkdir(baseDir, fs.ModePerm)
+
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	doc, err := html.Parse(resp.Body)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	resp.Body.Close()
+
+	// 读取文件
+	// htmlFile, err := ioutil.ReadFile("./hello.html")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// htmlbyte := bytes.NewReader(htmlFile)
+	// doc, err := html.Parse(htmlbyte)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+
+	// 获取指定区域的node
+	// var sNode *html.Node
+
+	// summaryNode := func(n *html.Node) {
+	// 	if n.Type == html.ElementNode && n.Data == "ul" {
+	// 		for _, node := range n.Attr {
+	// 			if node.Key == "class" && node.Val == "summary" {
+	// 				sNode = n
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// fmt.Println(sNode)
+
+	// forEachNode(doc, summaryNode, nil)
+
+	var links []string
+
+	visitNode := func(n *html.Node) {
+
+		// if n.Type == html.ElementNode && n.Data == "link" {
+
+		// 	for _, css := range n.Attr {
+
+		// 		if css.Key != "href" {
+		// 			continue
+		// 		}
+
+		// 		css1, err := resp.Request.URL.Parse(css.Val)
+		// 		if err != nil {
+		// 			continue
+		// 		}
+		// 		if css1.Hostname() == "books.studygolang.com" {
+		// 			fmt.Println(css.Val)
+		// 		}
+		// 	}
+		// }
+
+		if n.Type == html.ElementNode && n.Data == "a" {
+
+			for _, a := range n.Attr {
+
+				if a.Key != "href" {
+					continue
+				}
+
+				link, err := resp.Request.URL.Parse(a.Val)
+
+				if err != nil {
+					continue
+				}
+
+				if link.Hostname() == "books.studygolang.com" {
+
+					split := bytes.Split([]byte(a.Val), []byte("/"))
+					if len(split) == 2 {
+						if string(split[1]) != "" {
+
+							// 创建子目录 不管目录存不存在都执行创建目录操作
+							subDir := baseDir + "/" + string(split[0])
+							os.Mkdir(subDir, fs.ModePerm)
+							f := subDir + "/" + string(split[1])
+							HttpGet2(link.String(), f)
+
+							// if err != nil {
+							// 	log.Fatalln(err)
+							// }
+							// fileName := string(split[1])
+							// f, err1 := os.Create(subDir + "/" + fileName)
+							// if err1 != nil {
+							// 	log.Println(err1)
+							// }
+							// f.WriteString(result)
+							// f.Close()
+						}
+					}
+
+					// f, err := http.Get(link.String())
+					// if err != nil {
+					// 	log.Fatalln(err)
+					// }
+
+					//fileName := strconv.Itoa(i) + ".html"
+
+					// f.Body.Close()
+				}
+				links = append(links, link.String())
+			}
+		}
+	}
+
+	forEachNode(doc, visitNode, nil)
+
+}
+
+// 递归遍历HTML的node
+// 参数1： *html.Node
+// 参数2和3：func(n *html.Node) 匿名函数，参数是*html.Node
+func forEachNode(n *html.Node, pre, post func(n *html.Node)) {
+	if pre != nil {
+		pre(n)
+	}
+	// 每次都是去第一个子子节点，当子节点等于nil的时候
+	// 那么就取同胞的下一个节点
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		forEachNode(c, pre, post)
+	}
+	if post != nil {
+		post(n)
+	}
+}
+
+// down文件
+func HttpGet(url string) (result string, err error) {
+	resp, err1 := http.Get(url)
+	if err1 != nil {
+		err = err1
+		return
+	}
+	defer resp.Body.Close()
+
+	//读取网页body内容
+	// 下载文件有问题
+	buf := make([]byte, 1024*4)
+	for {
+		n, err := resp.Body.Read(buf)
+		//读取结束，或者出问题
+		if n == 0 {
+			fmt.Println("resp.Body.Read err = ", err)
+			break
+		}
+		result += string(buf[:n])
+
+	}
+	return
+}
+
+// down文件
+func HttpGet2(url string, fileName string) (result string, err error) {
+	resp, err1 := http.Get(url)
+	if err1 != nil {
+		err = err1
+		return
+	}
+	defer resp.Body.Close()
+
+	//读取网页body内容
+	f, err2 := os.Create(fileName)
+	if err2 != nil {
+		fmt.Println(err)
+	}
+	defer f.Close()
+
+	_, err = io.Copy(f, resp.Body)
+
+	return
+}
+
+// html转pdf
+func htmlToPdf() {
+
+}
