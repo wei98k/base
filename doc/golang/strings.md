@@ -444,30 +444,222 @@ A Builder is used to efficiently build a string using Write methods. It minimize
 
 构建器用于使用Write方法有效地构建一个字符串。它最大限度地减少了内存的复制。零值是可以使用的。不要复制一个非零的生成器。
 
+### func (*Builder) Cap
 
+`func (b *Builder) Cap() int`
 
+Cap returns the capacity of the builder's underlying byte slice. It is the total space allocated for the string being built and includes any bytes already written.
 
+Cap返回构建器的底层字节片的容量。它是分配给正在构建的字符串的总空间，包括已经写入的任何字节。
 
+### func (*Builder) Grow
 
+`func (b *Builder) Grow(n int)`
 
+Grow grows b's capacity, if necessary, to guarantee space for another n bytes. After Grow(n), at least n bytes can be written to b without another allocation. If n is negative, Grow panics.
 
+如果有必要，Grow会增加b的容量，以保证另外n个字节的空间。在Grow(n)之后，至少有n个字节可以被写入b而不需要再次分配。如果n是负数，Grow就会陷入困境。
 
+### func (*Builder) Len
 
+`func (b *Builder) Len() int`
 
+Len returns the number of accumulated bytes; b.Len() == len(b.String()).
 
+Len返回累积的字节数；b.Len() == len(b.String())。
 
+### func (*Builder) Reset
 
+`func (b *Builder) Reset()`
 
+Reset resets the Builder to be empty.
 
+将生成器重置为空。
 
+### func (*Builder) String
 
+`func (b *Builder) String() string`
 
+String returns the accumulated string.
 
+String返回累积的字符串。
 
+### func (*Builder) Write 
 
+`func (b *Builder) Write(p []byte) (int, error)`
 
+Write appends the contents of p to b's buffer. Write always returns len(p), nil.
 
+Write将p的内容追加到b的缓冲区。Write总是返回len(p), nil。
 
+### func (*Builder) WriteByte
 
+`func (b *Builder) WriteByte(c byte) error`
 
+WriteByte appends the byte c to b's buffer. The returned error is always nil.
 
+WriteByte将字节c追加到b的缓冲区。返回的错误总是nil。
+
+### func (*Builder) WriteRune
+
+`func (b *Builder) WriteRune(r rune) (int, error)`
+
+WriteRune appends the UTF-8 encoding of Unicode code point r to b's buffer. It returns the length of r and a nil error.
+
+WriteRune将Unicode代码点r的UTF-8编码追加到b的缓冲区。它返回r的长度和一个零的错误。
+
+### func (*Builder) WriteString
+
+`func (b *Builder) WriteString(s string) (int, error)`
+
+WriteString appends the contents of s to b's buffer. It returns the length of s and a nil error.
+
+WriteString将s的内容追加到b的缓冲区。它返回s的长度和一个nil错误。
+
+## type Reader
+
+```
+type Reader struct {
+	// contains filtered or unexported fields
+}
+```
+
+A Reader implements the io.Reader, io.ReaderAt, io.ByteReader, io.ByteScanner, io.RuneReader, io.RuneScanner, io.Seeker, and io.WriterTo interfaces by reading from a string. The zero value for Reader operates like a Reader of an empty string.
+
+读取器通过读取字符串实现io.Reader、io.ReaderAt、io.ByteReader、io.ByteScanner、io.RuneReader、io.RuneScanner、io.Seeker和io.WriterTo接口。读取器的零值与空字符串的读取器操作类似。
+
+### func NewReader
+
+`func NewReader(s string) *Reader`
+
+NewReader returns a new Reader reading from s. It is similar to bytes.NewBufferString but more efficient and read-only.
+
+它与bytes.NewBufferString相似，但效率更高，而且是只读的，它返回一个从s读取的新的阅读器。
+
+### func (*Reader) Len
+
+`func (r *Reader) Len() int`
+
+Len returns the number of bytes of the unread portion of the string.
+
+Len返回字符串中未读部分的字节数。
+
+### func (*Reader) Read
+
+`func (r *Reader) Read(b []byte) (n int, err error)`
+
+Read implements the io.Reader interface.
+
+读取实现了io.Reader接口。
+
+### func (*Reader) ReadAt
+
+`func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)`
+
+ReadAt implements the io.ReaderAt interface.
+
+ReadAt实现了io.ReaderAt接口。
+
+### func (*Reader) ReadByte
+
+`func (r *Reader) ReadByte() (byte, error)`
+
+ReadByte implements the io.ByteReader interface.
+
+ReadByte实现了io.ByteReader接口。
+
+### func (*Reader) ReadRune
+
+`func (r *Reader) ReadRune() (ch rune, size int, err error)`
+
+ReadRune implements the io.RuneReader interface.
+
+ReadRune实现了io.RuneReader接口。
+
+### func (*Reader) Reset 
+
+`func (r *Reader) Reset(s string)`
+
+Reset resets the Reader to be reading from s.
+
+重置将阅读器重置为从s读取
+
+### func (*Reader) Seek 
+
+`func (r *Reader) Seek(offset int64, whence int) (int64, error)`
+
+Seek implements the io.Seeker interface.
+
+Seek实现了io.Seeker接口。
+
+### func (*Reader) Size
+
+`func (r *Reader) Size() int64`
+
+Size returns the original length of the underlying string. Size is the number of bytes available for reading via ReadAt. The returned value is always the same and is not affected by calls to any other method.
+
+Size返回底层字符串的原始长度。Size是可用于通过ReadAt读取的字节数。返回的值总是相同的，不受调用任何其他方法的影响。
+
+### func (*Reader) UnreadByte
+
+`func (r *Reader) UnreadByte() error`
+
+UnreadByte implements the io.ByteScanner interface.
+
+UnreadByte实现了io.ByteScanner接口。
+
+### func (*Reader) UnreadRune 
+
+`func (r *Reader) UnreadRune() error`
+
+UnreadRune implements the io.RuneScanner interface.
+
+UnreadRune实现了io.RuneScanner接口。
+
+### func (*Reader) WriteTo
+
+`func (r *Reader) WriteTo(w io.Writer) (n int64, err error)`
+
+WriteTo implements the io.WriterTo interface.
+
+WriteTo实现了io.WriterTo接口。
+
+## type Replacer
+
+```
+type Replacer struct {
+	// contains filtered or unexported fields
+}
+```
+
+Replacer replaces a list of strings with replacements. It is safe for concurrent use by multiple goroutines.
+
+Replacer用替换品替换一个字符串的列表。它对多个goroutine的并发使用是安全的。
+
+### func NewReplacer
+
+`func NewReplacer(oldnew ...string) *Replacer`
+
+NewReplacer returns a new Replacer from a list of old, new string pairs. Replacements are performed in the order they appear in the target string, without overlapping matches. The old string comparisons are done in argument order.
+
+NewReplacer panics if given an odd number of arguments.
+
+NewReplacer从一个新旧字符串对的列表中返回一个新的Replacer。替换是按照它们在目标字符串中出现的顺序进行的，没有重叠的匹配。旧字符串的比较是按照参数顺序进行的。
+
+如果给定的参数数是奇数，NewReplacer就会慌乱。
+
+### func (*Replacer) Replace 
+
+`func (r *Replacer) Replace(s string) string`
+
+Replace returns a copy of s with all replacements performed.
+
+替换返回s的一个副本，其中包括所有已执行的替换。
+
+### func (*Replacer) WriteString
+
+`func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error)`
+
+WriteString writes s to w with all replacements performed.
+
+WriteString将s写入w中，并执行所有替换。
