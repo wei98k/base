@@ -1,18 +1,40 @@
 package main
 
+// https://medium.com/golangspec/goroutine-leak-400063aef468
+
 import (
 	"fmt"
 	"math/rand"
-	"runtime"
+	"net/http"
 	"time"
+
+	_ "net/http/pprof"
 )
 
+// func main() {
+// 	for i := 0; i < 4; i++ {
+// 		r := queryAll()
+// 		fmt.Println(r)
+// 		fmt.Printf("goroutines: %d\n", runtime.NumGoroutine())
+// 	}
+// }
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 func main() {
+	http.HandleFunc("/", handler)
+	http.ListenAndServe(":8080", nil)
+}
+
+func handler(rep http.ResponseWriter, req *http.Request) {
+	var a int
 	for i := 0; i < 4; i++ {
-		r := queryAll()
-		fmt.Println(r)
-		fmt.Printf("goroutines: %d\n", runtime.NumGoroutine())
+		a += queryAll()
+		// fmt.Printf("goroutines: %d\n", runtime.NumGoroutine())
 	}
+	rep.Write([]byte(fmt.Sprintf("%d", a)))
 }
 
 func queryAll() int {

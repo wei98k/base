@@ -1,0 +1,7 @@
+FROM mysql:5.6
+
+# 首次构建创建表, 并导入数据
+
+ADD create.sql /home/create.sql
+
+ADD populate.sql /home/create.sql

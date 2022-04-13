@@ -7,4 +7,3 @@ create table T(c int) engine=InnoDB;
 insert into T(c) values(1);
 
 show variables like 'transaction_isolation';
-

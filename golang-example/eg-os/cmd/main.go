@@ -6,6 +6,7 @@ import (
 	"example/util"
 	"fmt"
 	"io"
+	"io/fs"
 	"log"
 	"os"
 	"strings"
@@ -13,35 +14,35 @@ import (
 )
 
 func main() {
-	args := os.Args
+	// args := os.Args
 
-	if len(args) > 1 {
-		fmt.Println(args[1])
-	}
+	// if len(args) > 1 {
+	// 	fmt.Println(args[1])
+	// }
 
 	// 返回内核提供的主机名
-	hostname, err := os.Hostname()
-	fmt.Println(hostname, err)
+	// hostname, err := os.Hostname()
+	// fmt.Println(hostname, err)
 
-	dirContext, err1 := os.ReadDir("/Users/jw/workspace/base/golang-example/eg-os/")
+	// dirContext, err1 := os.ReadDir("/Users/jw/workspace/base/golang-example/eg-os/")
 
-	fmt.Println(err1)
+	// fmt.Println(err1)
 
-	for k, v := range dirContext {
-		fmt.Println(k, v.Name())
-	}
+	// for k, v := range dirContext {
+	// 	fmt.Println(k, v.Name())
+	// }
 
-	println("方式1 os.arg: ", args[0])
+	// println("方式1 os.arg: ", args[0])
 
-	pwd, err := os.Getwd()
+	// pwd, err := os.Getwd()
 
-	println("方式2 Getwd: ", pwd, err)
+	// println("方式2 Getwd: ", pwd, err)
 
-	println("方式3 getCurrentAbPathByExecutable: ", util.GetCurrentAbPathByExecutable())
+	// println("方式3 getCurrentAbPathByExecutable: ", util.GetCurrentAbPathByExecutable())
 
-	println("方式4 getCurrentAbPathByCaller: ", util.GetCurrentAbPathByCaller())
+	// println("方式4 getCurrentAbPathByCaller: ", util.GetCurrentAbPathByCaller())
 
-	println("getCurrentAbPath: ", util.GetCurrentAbPath())
+	// println("getCurrentAbPath: ", util.GetCurrentAbPath())
 
 	//===== 改变当前目录
 	// os.Chdir("../")
@@ -52,11 +53,11 @@ func main() {
 
 	//===== 设置文件权限
 
-	err2 := os.Chmod("./tmp/a.txt", 0644)
+	// err2 := os.Chmod("./tmp/a.txt", 0644)
 
-	fmt.Println(err2)
+	// fmt.Println(err2)
 
-	MyCreateTemp()
+	// MyCreateTemp()
 
 	//===== 读取文件
 
@@ -89,18 +90,21 @@ func main() {
 	// 	}
 
 	//===== 创建文件
-	// WriteFile()
+	WriteFile()
 
 	//===== 文字输入到标准输出
-	reader := bytes.NewReader([]byte("golang is ok"))
-	reader.WriteTo(os.Stdout)
-	fmt.Println("")
+	// reader := bytes.NewReader([]byte("golang is ok"))
+	// reader.WriteTo(os.Stdout)
+	// fmt.Println("")
 
 	//===== pipeReader 和 PipeWriter 类型
-	pipeReader, pipeWriter := io.Pipe()
-	go PipeWrite(pipeWriter)
-	go PipRead(pipeReader)
-	time.Sleep(30 * time.Second)
+	// pipeReader, pipeWriter := io.Pipe()
+	// go PipeWrite(pipeWriter)
+	// go PipRead(pipeReader)
+	// time.Sleep(30 * time.Second)
+
+	//===== 创建目录示例
+	// myMkdir()
 }
 
 func MyCreateTemp() {
@@ -219,7 +223,10 @@ FOREND:
 }
 
 func WriteFile() {
-	file, err := os.Create("writeAt.txt")
+	// 相对当前目录创建文件
+	// file, err := os.Create("writeAt.txt")
+	// 指定目录创建文件
+	file, err := os.Create("./mydir/writeAt.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -258,4 +265,16 @@ func PipRead(reader *io.PipeReader) {
 		}
 		fmt.Println("接到字节: %d\n buf内容: %s\n", n, buf)
 	}
+}
+
+func myMkdir() {
+	// Mkdir、MkdirAll、MkdirTemp
+
+	// 创建一个777权限的目录
+	// 如果文件夹已存在也不会报错的
+	os.Mkdir("./mydir", fs.ModePerm)
+	// os.Chmod("./mydir", 0777)
+
+	// 创建多层级目录
+	// os.MkdirAll("./mydir/a/b", fs.ModePerm)
 }

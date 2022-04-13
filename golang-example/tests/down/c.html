@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>中文网站榜单 - 网站排行榜</title>
+    <meta name="keywords" content="中文网站排行榜.榜单，网站排行榜榜单,网站变化趋势,排行榜" />
+    <meta name="description" content="中文网站榜单是根据中文地区过去一周中文网站中文地区网站综合积分排名得出，反应了各地区中文网站热度。" />
+    <link rel="stylesheet" type="text/css" href="/css/base.css?rd=sfaasdfasdfds">
+    <script src="/js/jquery.min.js" type="text/jscript" language="javascript"></script>
+    <script src="/js/jq-public.js" type="text/jscript" language="javascript"></script>
+    <script src="/js/toppage.js" type="text/jscript" language="javascript"></script>
+    <script src="/js/layer/layer.js" type="text/jscript" language="javascript"></script>
+    <script src="/js/device.min.js" type="text/jscript" language="javascript"></script>
+    <script src="/js/Moblie.js" type="text/jscript" language="javascript"></script>
+
+    <script class="CLASS42bc4e2f_b826_11e9_9ed0_18dbf2568723" src="https://a2put.chinaz.com/propagate.js"></script>
+    
+    
+
+    <link rel="shortcut icon" type="image/x-ico" href="https://img.chinaz.com/2020/img/favicon.ico" />
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            var r = Math.ceil(Math.random() * 20);
+            var s = Math.ceil(Math.random() * 20);
+            $("#MVaneHead_01 > a").each(function (i) {
+                if (i == r || s == i) {
+                    $(this).addClass("spec");
+                }
+            });
+        });
+        function ReloadRandom() {
+            var guid = $("randomLink").attr("val");
+            $.post("/json/IndexHandler.ashx?rd=" + Math.random(), { action: "random", guid: guid }, function (msg) {
+                $("#randomList").html(msg.str);
+                $("#randomLink").attr("val", msg.guid)
+            }, "json");
+        }
+    </script>
+</head>
+
+<body id="content">
+
+
+	<div class="advertBox backfix" id="toolLeftImg">
+        <script>propagate('s1693353963620413', getCurrentScript())</script>
+    </div>
+    <div class="TopPageHeadWrap">
+        <div class="toolBar">
+            <div class="TPmain">
+                <!--topNav Star -->
+                <div class="topNav clearfix">
+                    <ul class="navList fl clearfix">
+                        <li><div class="one"><a href="http://www.chinaz.com">站长之家</a></div></li>
+
+                        <li>
+                            <div class="one"><a href="http://tool.chinaz.com" target="_blank">站长工具<i class="icon"></i></a></div>
+                            <div class="two">
+                                <a href="http://alexa.chinaz.com" target="_blank">ALEXA排名查询</a>
+                                <a href="http://rank.chinaz.com" target="_blank">百度权重查询</a>
+                                <a href="http://seo.chinaz.com" target="_blank">SEO概况查询</a>
+                                <a href="http://link.chinaz.com" target="_blank">友情链接查询</a>
+                                <a href="http://whois.chinaz.com" target="_blank">Whois信息查询</a>
+                                <a href="http://tool.chinaz.com/beian.aspx" target="_blank">域名备案查询</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="one"><a href="http://sc.chinaz.com" target="_blank">站长素材<i class="icon"></i></a></div>
+                            <div class="two">
+                                <a href="http://font.chinaz.com/" target="_blank">字体下载</a>
+                                <a href="http://sc.chinaz.com/jianli/" target="_blank">简历模板</a>
+                                <a href="http://sc.chinaz.com/tupian/" target="_blank">高清图片</a>
+                                <a href="http://sc.chinaz.com/shiliang/" target="_blank">矢量素材</a>
+                                <a href="http://sc.chinaz.com/ppt/" target="_blank">PPT模板</a>
+                                <a href="http://sc.chinaz.com/psd/" target="_blank">PSD素材</a>
+                            </div>
+                        </li>
+                        <li><div class="one"><a href="http://down.chinaz.com" target="_blank">源码下载</a></div></li>
+                        <li><div class="one"><a href="//api.chinaz.com/ApiDetails/Top" target="_blank">API接口</a></div></li>
+                        <li>
+                            <a class="Tnone" target="_blank" href="//mtop.chinaz.com/"><span>手机版</span></a>
+                            <p class="Tntwo two"><img src="/images/phone.jpg" width="200" height="200"></p>
+                        </li>
+                        <!--<li><div class="one"><a href="http://space.chinaz.com" target="_blank">站长专栏</a></div></li>-->
+                        <!--<li class="watch"><div class="one"><a href="http://weibo.com/chinaz" target="_blank"><i class="icon"></i>关注我们</a></div></li>-->
+                    </ul>
+                    <div class="navUser fr" id="chinaz_topbar">
+             
+                    </div>
+                </div>
+                <!--topNav End -->
+            </div>
+        </div>
+        <div class="ToplogoWrap clearfix">
+            <div class="TPmain">
+                <h1 class="Toplogo"><a href=""><img src="/images/top-logo.png"></a></h1>
+                <div class="TopSearch"><input type="text" lang="请输入搜索内容" id="txtKeyWord" onblur="BlurKey()" onfocus="FucusKey()" class="Rtxt" value="请输入搜索内容" /><input id="btnSearch" type="button" onclick="javascript:SearchKey();" class="Rbtn" /></div>
+                <div class="fr mr25" style=" text-align:right; width:468px; ">
+                    <!--<a href="http://tool.chinaz.com/ppb/ppbs11" target="_blank"><img src="http://stats.chinaz.com/tools_img/ppb468.gif" /></a>-->
+                    <script>propagate('1333761443824144385', getCurrentScript());</script>
+                </div>
+            </div>
+        </div>
+        <!--ToolNavbar-begin-->
+        <div style="overflow: hidden;" class="TopNav-showWrap" id="Navbar">
+            <div class="TopNav-layout">
+                <div class="TopNav-menu line">
+                    <div class="TopNav-content container">
+                        <div class="TopNav-Centbox">
+                            <div class="TopNav-MenuItem TopNav-MenuItem-index">
+                                <a class="menu-title $.current1" href="/">首页</a><div class="MenuItemCent" style=" padding-left:0;"><ul class="MenuItem-SubList"> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/all/">网站总排名</a></li></ul></div>
+                            </div>
+                            <div class="TopNav-MenuItem TopNav-MenuItemThree">
+                                <a class="menu-title" href="/hangye/">行业排名</a><div class="MenuItemCent leftbor"><ul class="MenuItem-SubList"> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_shenghuo.html">生活服务</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_zonghe.html">综合其他</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_yule.html">休闲娱乐</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_jiaoyu.html">教育文化</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_qiye.html">行业企业</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_wangluo.html">网络科技</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_gov.html">政府组织</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_shopping.html">购物网站</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_news.html">新闻媒体</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_jiaotonglvyou.html">交通旅游</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_yiliao.html">医疗健康</a></li> <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangye/index_tiyu.html">体育健身</a></li></ul></div>
+                            </div>
+                            <div class="TopNav-MenuItem TopNav-MenuItemtwo">
+                                <a class="menu-title" href="/diqu/">地区排名</a><div class="MenuItemCent"><ul class="MenuItem-SubList"><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_BeiJing.html">北京</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ShangHai.html">上海</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_TianJin.html">天津</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ZhongQing.html">重庆</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HeiLongJiang.html">黑龙江</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_JiLin.html">吉林</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_LiaoNing.html">辽宁</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_NeiMengGu.html">内蒙古</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HeBei.html">河北</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ShanXi.html">山西</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ShaanXi.html">陕西</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ShanDong.html">山东</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_XinJiang.html">新疆</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_XiCang.html">西藏</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_QingHai.html">青海</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_GanSu.html">甘肃</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_NingXia.html">宁夏</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HeNan.html">河南</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_JiangSu.html">江苏</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HuBei.html">湖北</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_ZheJiang.html">浙江</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_AnHui.html">安徽</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_FuJian.html">福建</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_JiangXi.html">江西</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HuNan.html">湖南</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_GuiZhou.html">贵州</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_SiChuan.html">四川</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_GuangDong.html">广东</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_YunNan.html">云南</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_GuangXi.html">广西</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HaiNan.html">海南</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_XiangGang.html">香港</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_AoMen.html">澳门</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_TaiWan.html">台湾</a></li><li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqu/index_HaiWai.html">海外</a></li></ul></div>
+                            </div>
+                            <div class="TopNav-MenuItem TopNav-MenuItemOne">
+                                <a class="menu-title" href="/alltop/">排行榜</a>
+                                <div class="MenuItemCent" style=" padding-left:0;">
+                                    <ul class="MenuItem-SubList">
+                                        <li class="SubItem-wp"><a class="TNMI-SubItem" href="/diqutop/">地区排行榜</a></li>
+                                        <li class="SubItem-wp"><a class="TNMI-SubItem" href="/hangyetop/">行业排行榜</a></li>
+                                        <li class="SubItem-wp"><a class="TNMI-SubItem" href="/waptop/">移动排行榜</a></li>
+                                        <li class="SubItem-wp"><a class="TNMI-SubItem" href="/gongsi/">公司排行榜</a></li>
+                                        <li class="SubItem-wp"><a class="TNMI-SubItem" href="http://alexa.chinaz.com/Global/">全球排行榜</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="menu-right-section rightnav fr">
+                                <ul class="menu-right-list">
+                                    <li class="menu-right-list-item user-center">
+                                        <a href="//topuser.chinaz.com/shoulu.aspx" class="menu-right-list-link">
+                                            <span class="item-icon"></span>
+                                            <span class="item-name">申请收录</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--ToolNavbar-end-->
+    </div>
+    <div class="gotop hide" id="gotop">
+        <a class="cz-weixin" style=" display:none;" href="javascript:;"></a>
+        <a class="feedback" onclick="window.open('http://wpa.qq.com/msgrd?v=3&uin=3051514&site=qq&menu=yes', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');return false;" target="_blank"></a> <a class="go" href="javascript:;"></a>
+    </div>
+    <!--TopPageHeadWrap-begin-->
+    <div class="Wrapper TopIndexCentWrap pt10">
+        <link rel="stylesheet" type="text/css" href="/css/toppage.css">
+<div class="Wrapper">
+    <!--TopPlaceWrap-begin-->
+    <div class="TopPlaceWrap clearfix">
+        <p class="TopPlace-left"><span class="ico-plhome"></span>所在位置：<a href="http://top.chinaz.com/">首页</a> > <a href="index_.html">中文网站排行榜</a></p>
+    </div>
+    <!--TopPlaceWrap-begin-->
+    <div class='adboxnew'>
+    <div class='adpicnew'>
+        <script>propagate('1334019040422662146', getCurrentScript());</script>
+    </div>
+    <div class='adpicnew'>
+        <script>propagate('1334412581372170241', getCurrentScript());</script>
+    </div>
+</div>
+    <!--TopChiCent-end-->
+    <div class="TopChiCent clearfix">
+        <div class="ToChinHead">
+
+            <div class="TopChinleft"><i></i>中文网站排行榜</div>
+            <div class="TopPlace-right">
+                <div class="BtnLift"><a href="index_up.html" class="up "></a><a class="do  " href="index_down.html"></a> <a class="phone" href="/wapalltop/index.html">移动榜单</a></div>
+
+                <div class="MainCate-choese ToolChoese mr10">
+                    <div class="MainCateW-choese SearChoeseWrap">
+                        <div class="MainCateW-cont SearChoese">总排行榜</div>
+                        <span class="MCicon-drop-down"></span>
+                        <ul class="MainCateC-down SearChoese-show">
+                            <li class="mt0"><a href="/alltop/index.html">总排行榜</a></li>
+                            <li><a href="/hangyetop/index_hy.html">行业排行榜</a></li>
+                            <li><a href="/diqutop/index_dq.html">地区排行榜</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="TopChiList YaHei">
+            <div class="headTit ulli clearfix"><div class="w90">排名</div><div class="w320">网站</div><div class="w90">百度权重</div><div class="w120">Alexa排名</div><div class="w110">PR值</div><div class="w120">网站得分</div><div class="w120">排名变化</div></div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">1</div>
+                            <div class="w320 PCop"><a href="/site_www.baidu.com.html" target="_blank">百度</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">5</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_9.gif" /></div></div>
+                            <div class="w120">4999</div>
+                            <div class="w120 col-green"><span class="tRank"> - 0</span></div>
+                            <div id="hf_160004" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/site_www.baidu.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/baiducom/969e383d-19b6-4081-b933-a38ca415dd8a_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">百度，全球大的中文搜索引擎、大的中文网站。2000年1月创立于北京中关村。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>1</span><i></i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i></i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>搜索引擎</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">2</div>
+                            <div class="w320 PCop"><a href="/Html/site_sogou.com.html" target="_blank">搜狗</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">193</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4945</div>
+                            <div class="w120 col-green"><span class="tRank"> - 0</span></div>
+                            <div id="hf_39680" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_sogou.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwwsogoucom/57aa180d-0156-4e6b-a157-8fda70374d3a_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务。在搜索业务的同时，也推出搜狗输入法、免费邮箱、企业邮箱等</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>2</span><i></i></p><p>总排名</p></li>
+                                    <li><p><span>2</span><i></i></p><p>北京</p></li>
+                                    <li><p><span>2</span><i></i></p><p>搜索引擎</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">3</div>
+                            <div class="w320 PCop"><a href="/Html/site_so.com.html" target="_blank">好搜</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">69</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_6.gif" /></div></div>
+                            <div class="w120">4939</div>
+                            <div class="w120 col-green"><span class="tRank"> - 0</span></div>
+                            <div id="hf_98333" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_so.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/socom/43267303-2c77-463b-a8ad-428ae4052f92_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">好搜是奇虎360公司推出的独立搜索品牌，致力于为您提供更精准、更快捷、更安全的搜索服务。用好搜，特顺手。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>3</span><i></i></p><p>总排名</p></li>
+                                    <li><p><span>3</span><i></i></p><p>北京</p></li>
+                                    <li><p><span>3</span><i></i></p><p>搜索引擎</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">4</div>
+                            <div class="w320 PCop"><a href="/Html/site_sohu.com.html" target="_blank">搜狐</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">7</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4472</div>
+                            <div class="w120 col-green"><span class="tRank"> - 0</span></div>
+                            <div id="hf_39672" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_sohu.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwwsohucom/7136b28c-4b8e-469c-b6f0-a98f5147d76c_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">搜狐网为用户提供24小时不间断的x新闻资讯，及搜索、邮件等网络服务。内容包括全球热点事件、突发新闻、时事评论、热播影视剧、体育赛事、行业动态、生活服务信息，以及论坛</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>4</span><i></i></p><p>总排名</p></li>
+                                    <li><p><span>4</span><i></i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">5</div>
+                            <div class="w320 PCop"><a href="/Html/site_qq.com.html" target="_blank">腾讯网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">4</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4472</div>
+                            <div class="w120 col-green"><span class="tRank"> - 0</span></div>
+                            <div id="hf_39666" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_qq.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwwqqcom/24bfa9c8-4002-4973-a1d8-7c9b981108d0_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">腾讯网从2003年创立至今，已经成为集新闻信息，区域垂直生活服务、社会化媒体资讯和产品为一体的互联网媒体平台。腾讯网下设新闻、科技、财经、娱乐、体育、汽车、时尚等多</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>5</span><i></i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i></i></p><p>广东</p></li>
+                                    <li><p><span>2</span><i></i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">6</div>
+                            <div class="w320 PCop"><a href="/Html/site_weibo.com.html" target="_blank">新浪微博</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">13</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_9.gif" /></div></div>
+                            <div class="w120">4471</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 7</span></div>
+                            <div id="hf_39669" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_weibo.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/weibocom/cd470597-4e81-4bb1-8608-55f7994bd996_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">微博是基于用户关系的社交媒体平台，用户可以通过PC、手机等多种移动终端接入，以文字、图片、视频等多媒体形式，实现信息的即时分享、传播互动 。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>6</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>5</span><i class="col-red">↑</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i class="col-red">↑</i></p><p>社交网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">7</div>
+                            <div class="w320 PCop"><a href="/Html/site_sina.com.cn.html" target="_blank">新浪网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">15</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4471</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 1</span></div>
+                            <div id="hf_39668" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_sina.com.cn.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/sinacomcn/9c10ca06-b3a4-44f2-bc50-5da4e37e6b6d_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">新浪网为全球用户24小时提供全面及时的中文资讯，内容覆盖国内外突发新闻事件、体坛赛事、娱乐时尚、产业资讯、实用信息等，设有新闻、体育、娱乐、财经、科技、房产、汽车</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>7</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>6</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>3</span><i></i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">8</div>
+                            <div class="w320 PCop"><a href="/Html/site_xinhuanet.com.html" target="_blank">新华网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">17</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_9.gif" /></div></div>
+                            <div class="w120">4470</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 28</span></div>
+                            <div id="hf_39561" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_xinhuanet.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/xinhuanetcom/9cb6c94c-4489-404d-98f7-8778b18a51a5_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">新华网是由党中央直接部署，国家通讯社新华社主办的中央重点新闻网站主力军，是党和国家重要的网上舆论阵地，在海内外具有重大影响力。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>8</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>7</span><i class="col-red">↑</i></p><p>北京</p></li>
+                                    <li><p><span>4</span><i class="col-red">↑</i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">9</div>
+                            <div class="w320 PCop"><a href="/Html/site_163.com.html" target="_blank">网易</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">116</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4469</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 2</span></div>
+                            <div id="hf_39670" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_163.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/163com/cee2aa86-db54-46be-987f-0514a3afa306_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">网易是中国领先的互联网技术公司，为用户提供免费邮箱、游戏、搜索引擎服务，开设新闻、娱乐、体育等30多个内容频道，及博客、视频、论坛等互动交流，网聚人的力量。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>9</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>2</span><i></i></p><p>广东</p></li>
+                                    <li><p><span>5</span><i class="col-green">↓</i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">10</div>
+                            <div class="w320 PCop"><a href="/site_tv.sohu.com.html" target="_blank">搜狐视频</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">7</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4467</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 4</span></div>
+                            <div id="hf_38615" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/site_tv.sohu.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/tvsohucom/fe531e89-edb1-4b24-a477-410270542e7e_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">搜狐视频是搜狐旗下专业的综合视频网站，提供正版高清电影、电视剧、综艺、纪录片、动漫等。网罗新热新闻、娱乐咨询，同时提供免费视频空间和视频分享服务。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>10</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>8</span><i class="col-red">↑</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i class="col-red">↑</i></p><p>视频电影</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">11</div>
+                            <div class="w320 PCop"><a href="/Html/site_bing.com.html" target="_blank">微软必应搜索</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">29</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4467</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 26</span></div>
+                            <div id="hf_119380" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_bing.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/bingcom/260f36be-1aa4-4ae4-8516-4b487b238651_2015_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">微软必应搜索是国际领先的搜索引擎，为中国用户提供网页、图片、视频、词典、翻译、资讯、地图等全球信息搜索服务。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>11</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i class="col-red">↑</i></p><p>上海</p></li>
+                                    <li><p><span>4</span><i></i></p><p>搜索引擎</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">12</div>
+                            <div class="w320 PCop"><a href="/Html/site_eastmoney.com.html" target="_blank">东方财富网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">806</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4467</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 3</span></div>
+                            <div id="hf_38884" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_eastmoney.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwweastmoneycom/e05d58da-bdae-4160-938a-cd0aee0c2e31_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">东方财富网，专业的互联网财经媒体，提供7*24小时财经资讯及全球金融市场报价，汇聚全方位的综合财经新闻和金融市场资讯，覆盖股票、财经、证券、金融、美股、港股、行情、</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>12</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>2</span><i class="col-green">↓</i></p><p>上海</p></li>
+                                    <li><p><span>1</span><i></i></p><p>金融财经</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">13</div>
+                            <div class="w320 PCop"><a href="/Html/site_csdn.net.html" target="_blank">CSDN</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">28</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4466</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 3</span></div>
+                            <div id="hf_39385" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_csdn.net.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/csdnnet/a00f54ce-37ba-46ac-bea1-f805db7ae526_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">CSDN.NET - 全球大中文IT社区，为IT专业技术人员提供全面的信息传播和服务平台</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>13</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>9</span><i class="col-red">↑</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>技术编程</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">14</div>
+                            <div class="w320 PCop"><a href="/Html/site_zhihu.com.html" target="_blank">知乎</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">186</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_6.gif" /></div></div>
+                            <div class="w120">4466</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 6</span></div>
+                            <div id="hf_39298" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_zhihu.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/zhihucom/a17c74ab-3c98-4f06-9248-b342052b6b3d_2019_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">一个真实的网络问答社区，帮助你寻找答案，分享知识。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>14</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>10</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>2</span><i class="col-green">↓</i></p><p>社交网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">15</div>
+                            <div class="w320 PCop"><a href="/site_v.qq.com.html" target="_blank">腾讯视频</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">4</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4465</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 5</span></div>
+                            <div id="hf_56508" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/site_v.qq.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/vqqcom/f6c1aa74-4284-404c-98d8-200afc7b168c_2019_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">腾讯视频致力于打造中国领先的在线视频媒体平台，以丰富的内容、极致的观看体验、便捷的登录方式、24小时多平台无缝应用体验以及快捷分享的产品特性，主要满足用户在线观看</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>15</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>3</span><i></i></p><p>广东</p></li>
+                                    <li><p><span>2</span><i></i></p><p>视频电影</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">16</div>
+                            <div class="w320 PCop"><a href="/Html/site_zol.com.cn.html" target="_blank">中关村在线</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">279</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_8.gif" /></div></div>
+                            <div class="w120">4465</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 7</span></div>
+                            <div id="hf_39344" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_zol.com.cn.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/zolcomcn/f87759c7-6937-4bfb-9c38-223eae82d865_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">中国领先的IT信息与商务门户, 包括新闻, 商城, 硬件, 下载, 游戏, 手机, 评测等40个大型频道，每天发布大量各类产品促销信息及文章专题，是IT行业的厂商, 经销商, IT产品, </div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>16</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>11</span><i class="col-red">↑</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>电脑硬件</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">17</div>
+                            <div class="w320 PCop"><a href="/Html/site_iqiyi.com.html" target="_blank">爱奇艺</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">509</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4465</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 8</span></div>
+                            <div id="hf_38609" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_iqiyi.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/iqiyicom/39c19234-4b1d-484d-b5f2-303259edb41c_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">爱奇艺（iqiyi.com）是全球领先的提供海量、优质、高清的网络视频服务的大型视频网站，网络视频播放首选平台。爱奇艺影视内容丰富多元，涵盖电影、电视剧、动漫、综艺、生活</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>17</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>12</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>3</span><i class="col-green">↓</i></p><p>视频电影</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">18</div>
+                            <div class="w320 PCop"><a href="/Html/site_jd.com.html" target="_blank">京东商城</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">10</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4464</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 1</span></div>
+                            <div id="hf_39676" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_jd.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/jdcom/fb876cd4-b804-43e5-9cff-f5bac8707b90_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">京东商城-专业的数码网上购物商城,产品包括数码、家电、手机、电脑配件、网络产品等数万种商品直销,便捷，诚信的服务,为您提供愉悦的网上商城购物体验!</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>18</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>13</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>电商网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">19</div>
+                            <div class="w320 PCop"><a href="/Html/site_people.com.cn.html" target="_blank">人民网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">405</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_9.gif" /></div></div>
+                            <div class="w120">4464</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 1</span></div>
+                            <div id="hf_39560" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_people.com.cn.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/peoplecomcn/1f1b03d0-a1ed-4a23-9800-ecfc2fcccf36_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">人民网，是世界十大报纸之一《人民日报》建设的以新闻为主的大型网上信息发布平台，也是互联网上最大的中文和多语种新闻网站之一。作为国家重点新闻网站，人民网以新闻报道</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>19</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>14</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>6</span><i class="col-green">↓</i></p><p>门户网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">20</div>
+                            <div class="w320 PCop"><a href="/Html/site_bilibili.com.html" target="_blank">哔哩哔哩弹幕视频网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">147</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_6.gif" /></div></div>
+                            <div class="w120">4463</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 9</span></div>
+                            <div id="hf_109457" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_bilibili.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/bilibilicom/b66eea7f-4f7a-4f7a-905b-89a2dca0e0f9_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">bilibili是国内知名的视频弹幕网站，这里有及时的动漫新番，棒的acg氛围，有创意的up主。大家可以在这里找到许多欢乐。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>20</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i></i></p><p>浙江</p></li>
+                                    <li><p><span>4</span><i class="col-green">↓</i></p><p>视频电影</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">21</div>
+                            <div class="w320 PCop"><a href="/Html/site_apple.com.html" target="_blank">苹果官方网站</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">55</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_9.gif" /></div></div>
+                            <div class="w120">4461</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 19</span></div>
+                            <div id="hf_118961" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_apple.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/applecom/a81daf7f-efeb-496e-bcf1-0dd74472afb9_2015_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">苹果公司（Apple Inc. ）是美国的一家高科技公司。由史蒂夫.乔布斯、斯蒂夫.沃兹尼亚克和罗.韦恩(Ron Wayne)等三人于1976年4月1日创立，并命名为美国苹果电脑公司（Apple C</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>21</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i></i></p><p>海外</p></li>
+                                    <li><p><span>1</span><i></i></p><p>跨国公司</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">22</div>
+                            <div class="w320 PCop"><a href="/Html/site_pcbaby.com.cn.html" target="_blank">太平洋亲子网</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">584</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4459</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 17</span></div>
+                            <div id="hf_39000" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_pcbaby.com.cn.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/pcbabycomcn/f5d7411c-1369-43af-ad51-1c03490bf409_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">太平洋亲子网为家长们提供0-6岁各阶段孩子成长、教育、家庭和用品等全方位、多角度的各种实用资讯以及有关怀孕的各方面知识。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>22</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>4</span><i class="col-red">↑</i></p><p>广东</p></li>
+                                    <li><p><span>1</span><i></i></p><p>母婴网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">23</div>
+                            <div class="w320 PCop"><a href="/site_blog.csdn.net.html" target="_blank">CSDN博客</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">28</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_5.gif" /></div></div>
+                            <div class="w120">4458</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 2</span></div>
+                            <div id="hf_39835" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/site_blog.csdn.net.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/blogcsdnnet/9f3a4673-be9e-467d-aea6-3b9c42171fd1_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">CSDN深度IT技术博客，移动开发博客,Web前端博客,企业架构博客,编程语言博客,互联网博客,数据库博客,系统运维博客,云计算博客,研发管理博客,IT blog</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>23</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>15</span><i></i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>博客网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">24</div>
+                            <div class="w320 PCop"><a href="/Html/site_cnblogs.com.html" target="_blank">博客园</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">94</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_6.gif" /></div></div>
+                            <div class="w120">4455</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 2</span></div>
+                            <div id="hf_39386" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_cnblogs.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/cnblogscom/6705fa22-cc9e-403f-9fe8-bb8805e53d2c_2012_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">博客园是面向程序员的高品质IT技术学习社区，是程序员学习成长的地方。博客园致力于为程序员打造一个优秀的互联网平台，帮助程序员学好IT技术，更好地用技术改变世界。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>24</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>3</span><i class="col-green">↓</i></p><p>上海</p></li>
+                                    <li><p><span>2</span><i></i></p><p>博客网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">25</div>
+                            <div class="w320 PCop"><a href="/site_cn.bing.com.html" target="_blank">必应</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">29</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_6.gif" /></div></div>
+                            <div class="w120">4450</div>
+                            <div class="w120 col-green"><span class="tRank col-red03">↑ 25</span></div>
+                            <div id="hf_39882" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/site_cn.bing.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/cnbingcom/30bce3ab-7dd7-4cd9-993d-687271667c83_2012_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">微软公司2009年5月29日正式宣布推出全新中文搜索品牌“必应”，打造全新的快乐搜索体验。此次“必应”中文搜索品牌的发布将于微软全球搜索品牌Bing同步，是微软全球搜索服务</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>25</span><i class="col-red">↑</i></p><p>总排名</p></li>
+                                    <li><p><span>4</span><i class="col-red">↑</i></p><p>上海</p></li>
+                                    <li><p><span>5</span><i></i></p><p>搜索引擎</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">26</div>
+                            <div class="w320 PCop"><a href="/Html/site_58.com.html" target="_blank">58同城 </a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">567</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4450</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 6</span></div>
+                            <div id="hf_38860" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_58.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/58com/27001357-d8e5-41da-905f-010f71b3680c_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">58同城是国内领先的生活分类信息网站，海量生活信息免费发布查询。提供找房子、找工作、二手物品买卖、二手车、58团购、商家黄页、宠物票务、旅游交友等多种生活信息。每天</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>26</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>16</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>分类信息</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">27</div>
+                            <div class="w320 PCop"><a href="/Html/site_douban.com.html" target="_blank">豆瓣</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">615</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4446</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 15</span></div>
+                            <div id="hf_39679" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_douban.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwwdoubancom/e37436fa-66e1-4a37-984a-23ff244ed3a8_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">豆瓣提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>27</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>17</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>3</span><i class="col-green">↓</i></p><p>社交网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">28</div>
+                            <div class="w320 PCop"><a href="/Html/site_360doc.com.html" target="_blank">360doc个人图书馆</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">400</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_5.gif" /></div></div>
+                            <div class="w120">4444</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 4</span></div>
+                            <div id="hf_39251" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_360doc.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/www360doccom/052c8118-5eef-4cde-a6b4-0145505d9950_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">“360doc个人图书馆”是“北京六智信息技术股份有限公司”运营的免费个人与企业知识管理网站，用户注册后，即可在360doc上免费拥&#xA;有自己的网上个人图书馆，进行网页文章收藏</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>28</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>18</span><i class="col-green">↓</i></p><p>北京</p></li>
+                                    <li><p><span>1</span><i></i></p><p>图书展馆</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">29</div>
+                            <div class="w320 PCop"><a href="/Html/site_chinaz.com.html" target="_blank">站长之家</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">685</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4444</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 10</span></div>
+                            <div id="hf_39677" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_chinaz.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/wwwchinazcom/0c88bafb-b1ac-4179-a3a4-8de18c2c978d_2017_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">站长之家(中国站长站)为个人站长与企业网络提供全面的站长资讯、源代码程序下载、海量建站素材、强大的搜索优化辅助工具、网络产品设计与运营理念以及一站式网络解决方案，</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>29</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>1</span><i></i></p><p>福建</p></li>
+                                    <li><p><span>1</span><i></i></p><p>站长资源</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ContTit ulli clearfix">
+                            <div class="w90 col-red03 fz16">30</div>
+                            <div class="w320 PCop"><a href="/Html/site_1688.com.html" target="_blank">阿里巴巴1688</a></div>
+                            <div class="w90"><div><img src="/images/baidu/9.gif" /></div></div>
+                            <div class="w120">66</div>
+                            <div class="w110"><div><img src="/images/ranks/Rank_7.gif" /></div></div>
+                            <div class="w120">4441</div>
+                            <div class="w120 col-green"><span class="tRank col-green">↓ 4</span></div>
+                            <div id="hf_81985" class="hfCss" style="display:none;">
+                                <div class="ContHead">
+                                    <div class="leftImg">
+                                        <a href="/Html/site_1688.com.html" target="_blank">
+                                            <img src="//topimg.chinaz.net/WebSiteimages/1688com/83574d67-68c4-4acc-a306-f137ce7a0222_2016_s.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="rigTxt">阿里巴巴（1688.com）是全球企业间（B2B）电子商务的著名品牌，为数千万网商提供海量商机信息和便捷安全的在线交易市场，也是商人们以商会友、真实互动的社区平台。目前168</div>
+                                </div>
+                                <ul class="ContFoot">
+                                    <li><p><span>30</span><i class="col-green">↓</i></p><p>总排名</p></li>
+                                    <li><p><span>2</span><i></i></p><p>浙江</p></li>
+                                    <li><p><span>2</span><i></i></p><p>电商网站</p></li>
+                                </ul>
+                            </div>
+                        </div>
+
+            <div class="ContTPop">
+
+            </div>
+            <div class="ListPageWrap">
+                <a href="/alltop/index.html" > < </a><a class="Pagecurt"href="/alltop/index.html">1</a><a href="/alltop/index_2.html">2</a><a href="/alltop/index_3.html">3</a><a href="/alltop/index_4.html">4</a><a href="/alltop/index_5.html">5</a><a href="/alltop/index_6.html">6</a><a href="/alltop/index_7.html">7</a><a href="/alltop/index_8.html">8</a><span>...</span><a href="/alltop/index_1923.html">1923</a><a href="/alltop/index_2.html"> > </a>
+            </div>
+        </div>
+    </div>
+    <!--TopChiCent-end-->
+</div>
+    </div>
+    <script language="javascript">
+<!--
+        if (top.location !== self.location) {
+            top.location = self.location;
+        }
+//-->
+    </script>
+    <!--TPfooterWrap-end-->
+    ﻿
+    <script src="/js/uc1.js" type="text/javascript"></script>
+    <div class="TPfooterWrap">
+        <div class="TPfooter">
+            <div class="TPmain">
+                <p>
+                    <a href="//www.chinaz.com/aboutus/index.html" target="_blank">关于站长之家</a> -
+                    <a href="//ww.chinaz.com/aboutus/contact.php?from=news" target="_blank">联系我们</a> -
+                    <a href="//www.chinaz.com/aboutus/ad.html" target="_blank">广告服务</a> -
+                    <a href="//www.chinaz.com/aboutus/link.html" target="_blank">友情链接</a> -
+                    <a href="//www.chinaz.com/aboutus/announce.html" target="_blank">版权声明</a> -
+                    <a href="//www.chinaz.com/aboutus/join.html" target="_blank">人才招聘</a> -
+                    <a href="//www.chinaz.com/aboutus/events.html" target="_blank">网站动态</a> -
+                    <a href="//www.chinaz.com/aboutus/help.html" target="_blank">帮助</a> -
+                    <!--<a href="#">iPhone客户端</a>-<a href="#">Android客户端</a>- --><a href="//mtop.chinaz.com" target="_blank">手机版</a>
+                </p>
+                <p>
+                    ©CopyRight 2002-2021 CHINAZ.COM Inc All Rights Reserved. 站长之家 版权所有&nbsp;&nbsp;
+                    <SCRIPT language=javascript src="/js/cnzzjs.js"></SCRIPT>
+                </p>
+
+            </div>
+        </div>
+    </div>
+	
+    <!--TPfooterWrap-end-->
+    
+
+</body>
+</html> 
