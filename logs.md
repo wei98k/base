@@ -4,6 +4,7 @@
 ~整理时间: 2022年08月14日16:54:37 位置:blog~
 
 测试/usr/share/dict/words数据进行CRC32计算后冲突率
+
 	- [x] MAC电脑中找到`/usr/share/dict/words`文件, 上传到服务器导入到数据中
 	- [x] 文件如何导入到数据库中? 1 通过其他的脚本 2 直接使用mysql导入
 	- [x] 查找冲突记录`select word,cc FROM words group by cc`
