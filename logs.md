@@ -1,6 +1,47 @@
 
 - [ ] 打印文章 <MySQL的B-Tree索引底层结构以及具体实现原理详解>
 
+## 2022年11月17日 周四
+### Work-todo
+
+- 登录界面回车键无效果
+- 编辑或添加后页面数据不加载
+- 扩展包如何开发调试、安装 (车库扩展包)
+- 界面开发表单字段需要大量的重复的工作(如何减少重复的动作)
+
+### Work-log
+
+===整理larvel文档大纲制作map
+
+===思维导图 markdown 工具 Markmap
+
+Markmap缺点
+
+- 当节点数量多的时候，无法通过可视化编辑 寻找对应的节点就变的不方便了
+
+Makrmap总结: 对于节点数量少的时候还是比较好用的
+
+markmap官网 https://markmap.js.org/
+
+markmap-vscode插件 https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode
+
+markmap介绍文章: https://juejin.cn/post/7000874049333100551
+
+
+### Work-review
+
+## 2022年11月16日 周三
+### Work-todo
+
+### Work-log
+
+===laravel php
+
+laravel api资源排序
+```
+BrandResource::collection(Brand::all()->sortByDesc("id"))
+```
+### Work-review
 
 ## 2022年08月14日08:30:42
 
