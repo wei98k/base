@@ -28,6 +28,20 @@
 
 复制表结构和数据
 
+## 2022年11月20日 周日
+### Work-todo
+
+### Work-log
+
+重置密码 passwd 出现 Authentication token manipulation error
+
+进入高级模式 https://zhuanlan.zhihu.com/p/145417594
+
+```
+mount -o rw,remount /
+```
+
+### Work-review
 
 
 ## 2022年11月17日 周四
@@ -74,7 +88,7 @@ BrandResource::collection(Brand::all()->sortByDesc("id"))
 
 ## 2022年08月14日08:30:42
 
-~整理时间: 2022年08月14日16:54:37 位置:blog~
+~~整理时间: 2022年08月14日16:54:37 位置:blog~~
 
 测试/usr/share/dict/words数据进行CRC32计算后冲突率
 
