@@ -19,14 +19,76 @@
   - [ ] 复制表数据然后使用rand打乱表的数据
   - [ ] 通过公式计算出适合表的前缀索引长度
 
-- [ ] 
+## 2022年11月20日 周日
 
-## 2022年08月20日
+### Work-todo
 
-复制表结构
-`CREATE  TABLE IF NOT EXISTS tb_base_like (LIKE tb_base);`
+### Work-log
 
-复制表结构和数据
+===mac制作ubuntu镜像启动盘
+
+镜像下载: https://developer.aliyun.com/mirror/
+
+Mac下烧一个Ubuntu的启动盘 https://www.baifachuan.com/posts/1e92edd1.html
+
+弹出U盘 `diskutil eject /dev/diskN`
+
+FAQ: 
+
+问题: `dd: /dev/rdisk4: Resource busy` 
+处理方案: 卸载子分区有效  https://unix.stackexchange.com/questions/271471/running-dd-why-resource-is-busy
+
+```
+/dev/disk2
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *8.0 GB     disk2
+   1:             Windows_FAT_16 wr_usb_efi              134.2 MB   disk2s1
+   2:                      Linux                         1.1 GB     disk2s2
+vgsprasad-mbp:~ vgsprasad$ diskutil umount /dev/disk2s1
+Volume wr_usb_efi on disk2s1 unmounted
+vgsprasad-mbp:~ vgsprasad$ diskutil umount /dev/disk2s2
+disk2s2 was already unmounted
+```
+
+===如何在 Mac OS X 下制作可以在 PC 上启动的PE系统?
+
+https://www.zhihu.com/question/390946652
+
+===配置家里的rustdesk无法远程控制,需要如何排查问题？
+
+目前机器分别有深圳2台客户端(A B)，惠州1台客户端(C)，云服务器1台(S)
+
+云服务器已部署完成，并且A和B客户端远程连接都是正常，只有C客户端无法远程控制。C客户端的ID和key的配置也都正确，软件下方也提示连接就绪。
+
+尝试:
+
+1. 通过A连接C，提示连接中，最后提示无法连接中继服务器 终止
+2. 通过C连接B，提示连接中，最后提示无法连接中继服务器 终止
+3. 去掉A和C的连接S的ID和KEY用官方的服务器，连接成功
+
+客户端C的防火墙问题?
+杀毒软件的问题?
+家里的路由器问题？
+客户端C中的rustdesk配置的问题？
+
+
+### Work-review
+
+
+## 2022年11月20日 周日
+
+### Work-todo
+
+- 格式化硬盘，重新安装ubuntu系统 带界面的
+- ubuntu连接wifi
+- 更新系统，安装必要的工具命令。
+- 安装docker部署相关程序
+- 整理简历、复习面试题
+
+
+### Work-log
+
+### Work-review
 
 ## 2022年11月20日 周日
 ### Work-todo
@@ -138,6 +200,14 @@ SELECT CONCAT(table_schema,'.',table_name) AS 'Table Name', CONCAT(ROUND(table_r
 ```
 explain select * from words where word = "preconfer";
 ```
+
+
+## 2022年08月20日
+
+复制表结构
+`CREATE  TABLE IF NOT EXISTS tb_base_like (LIKE tb_base);`
+
+复制表结构和数据
 
 ## 2022年08月13日15:29:14
 
