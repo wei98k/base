@@ -1,3 +1,11 @@
+/**
+ * 资料
+ * 
+ * https://www.runoob.com/w3cnote/quick-sort-2.html 
+ * https://www.cnblogs.com/MOBIN/p/4681369.html
+ * https://blog.csdn.net/weixin_37818081/article/details/79186091
+ * 
+ */
 
 // 找出一个基准值
 // 缩小问题规模，知道符合基准值条件
