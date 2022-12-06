@@ -13,7 +13,7 @@
 function quickSort(arr, left, right) {
     var len = arr.length,
         partitionIndex,
-        left = typeof letf != 'number' ? 0 : left,
+        left = typeof left != 'number' ? 0 : left,
         right = typeof right != 'number' ? len - 1 : right
 
     if (left < right) {
@@ -33,7 +33,7 @@ function quickSort(arr, left, right) {
         partitionIndex = index - 1
 
         quickSort(arr, left, partitionIndex-1)
-        console.log(partitionIndex+1, right)
+        // console.log(partitionIndex+1, right)
         quickSort(arr, partitionIndex+1, right)
     }
 
@@ -68,11 +68,11 @@ function quickSort(arr, left, right) {
 //     return index-1;
 // }
 
-// function swap(arr, i, j) {
-//     var temp = arr[i];
-//     arr[i] = arr[j];
-//     arr[j] = temp;
-// }
+function swap(arr, i, j) {
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
 
 
 
