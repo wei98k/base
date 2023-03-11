@@ -10,35 +10,40 @@
 // 找出一个基准值
 // 缩小问题规模，知道符合基准值条件
 
-function quickSort(arr, left, right) {
-    var len = arr.length,
-        partitionIndex,
-        left = typeof left != 'number' ? 0 : left,
-        right = typeof right != 'number' ? len - 1 : right
+/**
+ * 1. 交换值 排序
+ * 2. 指针操作排序
+ */
 
-    if (left < right) {
-        let pivot = left,
-            index = pivot + 1;
-        for(let i = index; i<= right; i++) {
-            if(arr[i] < arr[pivot]) {
-                let temp = arr[i]
-                arr[i] = arr[index];
-                arr[index] = temp;
-                index++;
-            }
-        }
-        let temp2 = arr[pivot]
-        arr[pivot] = arr[index-1]
-        arr[index-1] = temp2
-        partitionIndex = index - 1
+// function quickSort(arr, left, right) {
+//     var len = arr.length,
+//         partitionIndex,
+//         left = typeof left != 'number' ? 0 : left,
+//         right = typeof right != 'number' ? len - 1 : right
 
-        quickSort(arr, left, partitionIndex-1)
-        // console.log(partitionIndex+1, right)
-        quickSort(arr, partitionIndex+1, right)
-    }
+//     if (left < right) {
+//         let pivot = left,
+//             index = pivot + 1;
+//         for(let i = index; i<= right; i++) {
+//             if(arr[i] < arr[pivot]) {
+//                 let temp = arr[i]
+//                 arr[i] = arr[index];
+//                 arr[index] = temp;
+//                 index++;
+//             }
+//         }
+//         let temp2 = arr[pivot]
+//         arr[pivot] = arr[index-1]
+//         arr[index-1] = temp2
+//         partitionIndex = index - 1
 
-    return arr;
-}
+//         quickSort(arr, left, partitionIndex-1)
+//         // console.log(partitionIndex+1, right)
+//         quickSort(arr, partitionIndex+1, right)
+//     }
+
+//     return arr;
+// }
 
 // function quickSort(arr, left, right) {
 //     var len = arr.length,
@@ -68,12 +73,44 @@ function quickSort(arr, left, right) {
 //     return index-1;
 // }
 
-function swap(arr, i, j) {
-    var temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
+// function swap(arr, i, j) {
+//     var temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+// }
 
+
+//===v1
+/**
+ *  
+ * @param {array} arr 
+ * @param {int} left 
+ * @param {int} right 
+ */
+function quickSort(arr, left, right) {
+    if(left < right) {
+        //设定基准值
+        let povit = left
+        index = povit + 1
+        //冒泡排序
+        for(var i = index; i <= arr.length; i++) {
+            if(arr[i] < arr[povit]) {
+                let temp = arr[i]
+                arr[i] = arr[index]
+                arr[index] = temp
+                index++
+            }
+        }
+        //交换最后一个值
+        let temp2 = arr[povit]
+        arr[povit] = arr[index-1]
+        arr[index-1] = temp2
+        //递归分解，排序
+        quickSort(arr, left, index-1)
+        quickSort(arr, index+1, right)
+    }
+    return arr
+}
 
 
 
